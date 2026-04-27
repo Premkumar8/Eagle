@@ -3,167 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eagle Group IT Solution - Advanced IT Services</title>
-
+    <title>Eagle Group of IT Solution | Software, Analytics And Cloud Solutions</title>
+    <meta name="description" content="Professional software development, analytics, and cloud services with productized solutions for modern operations teams.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #B32525;
-            --primary-hover: #911e1e;
-            --dark-color: #2c2c2c;
-            --text-color: #555;
-            --light-gray-bg: #f8f8f8;
-            --footer-bg: #1a1a1a;
-            --white-color: #ffffff;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
-            position: relative; /* Required for scrollspy */
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--dark-color);
-            font-weight: 700;
-        }
-        .section {
-            padding: 100px 0;
-        }
-        .navbar {
-            transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
-        }
-
-        /* Hero Section Carousel */
-        #hero {
-            width: 100%;
-            height: 100vh;
-            padding: 0;
-        }
-        #hero .carousel-item {
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            text-align: left;
-        }
-        #hero .slide-1 {
-            background-image: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)), url('https://images.unsplash.com/photo-1517245381816-7bb43f26487d?q=80&w=2070&auto=format=fit=crop');
-        }
-        #hero .slide-2 {
-            background-image: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format=fit=crop');
-        }
-        #hero .slide-3 {
-            background-image: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format=fit=crop');
-        }
-        .hero-content h1 {
-            color: var(--white-color);
-            font-size: 3.5rem;
-        }
-        .hero-content p {
-            font-size: 1.25rem;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .carousel-item.active .fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 14px 35px;
-            font-weight: 500;
-            border-radius: 50px;
-            text-transform: uppercase;
-        }
-
-        /* Other Sections... */
-        footer {
-            background-color: var(--footer-bg);
-            color: #ccc;
-            padding: 80px 0 30px 0;
-        }
-        footer h5 {
-            color: var(--white-color);
-        }
-        footer .social-icons a {
-            color: #ccc;
-            font-size: 1.5rem;
-            margin-right: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarNav">
+<body data-root-path="/">
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="https://placehold.co/220x70/ffffff/1a1a1a?text=Eagle+Group+IT&font=montserrat" alt="Eagle Group Logo" style="max-height: 70px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-lg-3" href="#contact">Get a Quote</a></li>
-                    </ul>
+                <div class="nav-shell">
+                    <a class="navbar-brand" href="/#hero">
+                        <img src="/static/images/eagle-group-of-it-solution-logo.png" alt="Eagle Group of IT Solution logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto align-items-lg-center nav-cluster">
+                            <li class="nav-item"><a class="nav-link" href="/#hero">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#products">Products</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link nav-cta" href="/#contact">Book a Consultation</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="hero" class="p-0">
-            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <section id="hero" class="hero-carousel-section">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active slide-1">
-                        <div class="container">
-                            <div class="hero-content col-lg-7">
-                                <h1 class="display-4 fade-in">Leading the Way in Digital Transformation</h1>
-                                <p class="lead my-4 fade-in" style="animation-delay: 0.2s;">We provide cutting-edge IT solutions that propel businesses forward into a smarter, more connected future.</p>
-                                <a href="#services" class="btn btn-primary fade-in" style="animation-delay: 0.4s;">Discover Our Services</a>
+                    <div class="carousel-item active">
+                        <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(8, 15, 31, 0.82) 0%, rgba(8, 15, 31, 0.58) 45%, rgba(8, 15, 31, 0.3) 100%), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
+                            <div class="container">
+                                <div class="hero-copy hero-copy-wide">
+                                    <p class="eyebrow">Software Engineering</p>
+                                    <h1>Building digital systems that support growth, control, and better decisions.</h1>
+                                    <p class="hero-text">Eagle Group of IT Solution helps organizations modernize workflows, deliver custom software, and build stronger operational visibility with solutions shaped around practical business outcomes.</p>
+                                    <div class="hero-actions">
+                                        <a href="/#services" class="btn btn-primary">Explore Services</a>
+                                        <a href="/#contact" class="btn btn-outline-light">Talk To Our Team</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item slide-2">
-                        <div class="container">
-                            <div class="hero-content col-lg-7">
-                                <h1 class="display-4 fade-in">Your Vision, Our Innovation</h1>
-                                <p class="lead my-4 fade-in" style="animation-delay: 0.2s;">Transforming complex ideas into powerful software and robust data strategies tailored to your unique goals.</p>
-                                <a href="#about" class="btn btn-primary fade-in" style="animation-delay: 0.4s;">Learn About Our Approach</a>
+                    <div class="carousel-item">
+                        <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(8, 15, 31, 0.82) 0%, rgba(8, 15, 31, 0.58) 45%, rgba(8, 15, 31, 0.3) 100%), url('/static/images/App.png');">
+                            <div class="container">
+                                <div class="hero-copy hero-copy-wide">
+                                    <p class="eyebrow">Data And Analytics</p>
+                                    <h1>Dashboards and reporting experiences designed for leadership and operations teams.</h1>
+                                    <p class="hero-text">We create reporting products that help organizations review KPIs, monitor risk, and respond faster with reliable, presentation-ready views of business performance.</p>
+                                    <div class="hero-actions">
+                                        <a href="/#products" class="btn btn-primary">View Solutions</a>
+                                        <a href="/#about" class="btn btn-outline-light">See Our Approach</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item slide-3">
-                        <div class="container">
-                            <div class="hero-content col-lg-7">
-                                <h1 class="display-4 fade-in">Secure & Scalable Infrastructure</h1>
-                                <p class="lead my-4 fade-in" style="animation-delay: 0.2s;">Building resilient and high-performance IT environments that ensure your business operates smoothly and securely.</p>
-                                <a href="#contact" class="btn btn-primary fade-in" style="animation-delay: 0.4s;">Get a Consultation</a>
+                    <div class="carousel-item">
+                        <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(8, 15, 31, 0.82) 0%, rgba(8, 15, 31, 0.58) 45%, rgba(8, 15, 31, 0.3) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');">
+                            <div class="container">
+                                <div class="hero-copy hero-copy-wide">
+                                    <p class="eyebrow">Cloud And Platforms</p>
+                                    <h1>Reliable cloud foundations for applications that need security, scale, and operational discipline.</h1>
+                                    <p class="hero-text">From architecture planning to production operations, Eagle Group helps teams modernize environments and launch business systems with more confidence.</p>
+                                    <div class="hero-actions">
+                                        <a href="/#contact" class="btn btn-primary">Request A Consultation</a>
+                                        <a href="/#products" class="btn btn-outline-light">Featured Platforms</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -177,58 +102,245 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <div class="container">
+                <div class="hero-capability-strip fade-in">
+                    <div><span>Services</span><strong>Software Engineering</strong></div>
+                    <div><span>Analytics</span><strong>Dashboards And Forecasting</strong></div>
+                    <div><span>Platforms</span><strong>Cloud And Operational Systems</strong></div>
+                    <div><span>Engagements</span><strong>Advisory Through Delivery</strong></div>
+                </div>
+            </div>
         </section>
 
         <section id="about" class="section">
-            <div class="container"><h2>About Us</h2><p>Content for about section...</p></div>
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <p class="eyebrow">About Eagle Group</p>
+                    <h2 class="section-title">A delivery partner for organizations that need more than a brochure website.</h2>
+                    <p class="section-subtitle">We work at the intersection of software, operations, and analytics. That means every engagement is shaped around business processes, reporting needs, and the people who need to use the system every day.</p>
+                </div>
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-6 fade-in">
+                        <div class="story-card">
+                            <h3>How we approach delivery</h3>
+                            <p>We start with process clarity, define the operating outcomes that matter, and then build the system around those realities. The result is software that feels specific to the business instead of generic and difficult to adopt.</p>
+                            <p>Our teams support discovery, architecture, implementation, and refinement so product ideas move from concept to dependable day-to-day use.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 fade-in">
+                        <div class="value-grid">
+                            <article class="value-card">
+                                <span class="value-number">01</span>
+                                <h3>Clarity</h3>
+                                <p>We reduce ambiguity in workflows, data definitions, and ownership.</p>
+                            </article>
+                            <article class="value-card">
+                                <span class="value-number">02</span>
+                                <h3>Control</h3>
+                                <p>We design systems that make operational performance easier to monitor and manage.</p>
+                            </article>
+                            <article class="value-card">
+                                <span class="value-number">03</span>
+                                <h3>Scale</h3>
+                                <p>We build foundations that support growth instead of creating more fragmentation.</p>
+                            </article>
+                            <article class="value-card">
+                                <span class="value-number">04</span>
+                                <h3>Adoption</h3>
+                                <p>We prioritize interfaces and reporting that teams can actually use confidently.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="services" class="section bg-light">
-            <div class="container"><h2>Services</h2><p>Content for services section...</p></div>
+
+        <section class="section dashboard-showcase">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 fade-in">
+                        <div class="dashboard-cover-frame">
+                            <img src="/static/images/App.png" alt="Eagle Group analytics dashboard preview" class="dashboard-cover-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 fade-in">
+                        <div class="section-intro section-intro-left">
+                            <p class="eyebrow">Dashboard Preview</p>
+                            <h2 class="section-title">A clearer, more executive-ready way to present performance data.</h2>
+                            <p class="section-subtitle">Our dashboard experiences are designed to help leadership and operations teams review KPIs, trends, and exceptions without depending on manual reports. The focus is speed, clarity, and confident action.</p>
+                        </div>
+                        <div class="story-card">
+                            <h3>What a professional dashboard should deliver</h3>
+                            <ul class="check-list">
+                                <li>Clean summaries for leadership, with drill-down detail for operational teams</li>
+                                <li>Consistent KPI definitions across sales, delivery, finance, and support</li>
+                                <li>Readable visual hierarchy that makes changes and risks immediately visible</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <section id="services" class="section section-surface">
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <p class="eyebrow">Core Services</p>
+                    <h2 class="section-title">Delivery capabilities built for practical transformation.</h2>
+                    <p class="section-subtitle">From workflow applications to cloud-ready analytics platforms, we help teams replace manual effort with cleaner systems and better operating visibility.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 fade-in">
+                        <article class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                            <h3>Custom Software Engineering</h3>
+                            <p>Internal tools, portals, and workflow systems designed around the actual way your teams operate.</p>
+                            <ul class="compact-list">
+                                <li>Web applications and portals</li>
+                                <li>Business workflow automation</li>
+                                <li>Supportable, maintainable architecture</li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 fade-in">
+                        <article class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>Analytics And Reporting</h3>
+                            <p>Dashboards and reporting products that give stakeholders timely metrics instead of manually assembled summaries.</p>
+                            <ul class="compact-list">
+                                <li>KPI dashboards and data modeling</li>
+                                <li>Executive and team reporting</li>
+                                <li>Forecasting and trend visibility</li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 fade-in">
+                        <article class="service-card h-100">
+                            <div class="service-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                            <h3>Cloud And Platform Delivery</h3>
+                            <p>Modern hosting, release workflows, and infrastructure planning for teams that need stronger reliability and control.</p>
+                            <ul class="compact-list">
+                                <li>Environment setup and modernization</li>
+                                <li>Security and deployment practices</li>
+                                <li>Scalable platform operations</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="products" class="section">
-            <div class="container"><h2>Products</h2><p>Content for products section...</p></div>
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <p class="eyebrow">Featured Products</p>
+                    <h2 class="section-title">Each product now has a dedicated page with delivery context, capabilities, and use cases.</h2>
+                    <p class="section-subtitle">These solution areas show how Eagle Group packages engineering and analytics expertise into offerings that are easier for business teams to evaluate and adopt.</p>
+                </div>
+                <div id="featuredProductsGrid" class="row g-4"></div>
+            </div>
         </section>
-        <section id="contact" class="section bg-light">
-            <div class="container"><h2>Contact Us</h2><p>Content for contact section...</p></div>
+
+        <section id="contact" class="section section-surface">
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <p class="eyebrow">Contact</p>
+                    <h2 class="section-title">Start with the business problem. We will help shape the right solution.</h2>
+                    <p class="section-subtitle">Share the process you want to improve, the reporting you need, or the product idea you want to validate. We will follow up with the right next step.</p>
+                </div>
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-7 fade-in">
+                        <div id="contactFormStatus" class="d-none" role="status" aria-live="polite"></div>
+                        <form class="contact-form" data-api-url="">
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Your name</label>
+                                <input id="name" type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Work email</label>
+                                <input id="email" type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="message">What do you need help with?</label>
+                                <textarea id="message" class="form-control" name="message" rows="6" placeholder="Enter your message here..."></textarea>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="yes" id="privacyConsent" required>
+                                <label class="form-check-label" for="privacyConsent">
+                                    I consent to Eagle Group storing this submission to respond to my inquiry.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 fade-in">
+                        <div class="contact-panel">
+                            <p class="contact-label">Engagement Focus</p>
+                            <h3>Typical conversations include:</h3>
+                            <ul class="check-list">
+                                <li>Replacing spreadsheet-heavy reporting</li>
+                                <li>Building internal systems for customer or operations teams</li>
+                                <li>Planning analytics, forecasting, or ML-enabled workflows</li>
+                                <li>Improving release, hosting, or cloud operating posture</li>
+                            </ul>
+                            <div class="contact-status">
+                                <strong>Response approach</strong>
+                                <p>We review the problem, clarify the desired outcome, and recommend a practical next step rather than pushing a one-size-fits-all package.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-12">
-                     <img src="https://placehold.co/220x70/ffffff/1a1a1a?text=Eagle+Group+IT&font=montserrat" alt="Eagle Group Logo" class="mb-3" style="max-height: 70px;">
-                     <p>Your trusted partner in navigating the complexities of the digital world.</p>
+            <div class="footer-grid">
+                <div>
+                    <a class="footer-brand" href="/#hero">
+                        <img src="/static/images/eagle-group-of-it-solution-logo-transparent.png" alt="Eagle Group of IT Solution logo">
+                    </a>
+                    <p class="footer-copy">We design reliable digital products, modernize workflows, and help teams use data with more clarity and control.</p>
+                    <div class="social-icons">
+                        <a href="/#contact" aria-label="Contact Eagle Group of IT Solution"><i class="fas fa-envelope"></i></a>
+                        <a href="/#products" aria-label="Featured products"><i class="fas fa-cube"></i></a>
+                        <a href="/#services" aria-label="Services"><i class="fas fa-briefcase"></i></a>
+                    </div>
                 </div>
-                <div class="col-lg-8 col-md-12">
-                     <h5>Subscribe to our Newsletter</h5>
-                     <p>Get the latest articles, resources and inspiration straight to your inbox.</p>
+                <div>
+                    <p class="footer-heading">Capabilities</p>
+                    <ul class="footer-links">
+                        <li><a href="/#services">Software Engineering</a></li>
+                        <li><a href="/#services">Analytics Platforms</a></li>
+                        <li><a href="/#services">Cloud Architecture</a></li>
+                        <li><a href="/#contact">Advisory And Delivery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer-heading">Featured Products</p>
+                    <ul class="footer-links">
+                        <li><a href="/products/visionpro-object-detection/">VisionPro Object Detection</a></li>
+                        <li><a href="/products/dataviz-analytics-dashboard/">DataViz Analytics Dashboard</a></li>
+                        <li><a href="/products/appgenius/">AppGenius</a></li>
+                        <li><a href="/products/enterprise-systems-manager/">Enterprise Systems Manager</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="footer-heading">Get In Touch</p>
+                    <p class="footer-copy">Tell us what you are building, what is slowing the team down, or what you need to launch next.</p>
+                    <a class="btn btn-primary footer-btn" href="/#contact">Start the Conversation</a>
                 </div>
             </div>
-             <hr class="my-5" style="border-color: #444;">
-             <div class="text-center">
-                 <p>&copy; <span id="year">2025</span> Eagle Group IT Solution. All Rights Reserved.</p>
-             </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Eagle Group of IT Solution. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // All JavaScript is now included here
-        document.addEventListener('DOMContentLoaded', function () {
-            const navbar = document.querySelector('.navbar');
-            let lastScrollTop = 0;
-            window.addEventListener('scroll', () => {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > lastScrollTop && scrollTop > navbar.offsetHeight) {
-                    navbar.style.top = `-${navbar.offsetHeight}px`;
-                } else {
-                    navbar.style.top = "0";
-                }
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-            });
-        });
-    </script>
+    <script src="/static/js/site-config.js"></script>
+    <script src="/static/js/product-data.js"></script>
+    <script src="/static/js/site.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 import os
 from email.utils import parseaddr
 
-from flask import Flask, flash, redirect, render_template, request, url_for
+from flask import Flask, flash, jsonify, make_response, redirect, render_template, request, url_for
 from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 
@@ -23,6 +23,8 @@ app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
 app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")
 app.config["MAIL_DEFAULT_SENDER"] = os.getenv("MAIL_DEFAULT_SENDER") or app.config["MAIL_USERNAME"]
 app.config["MAIL_RECIPIENT"] = os.getenv("MAIL_RECIPIENT")
+app.config["CONTACT_API_URL"] = os.getenv("CONTACT_API_URL", "/api/contact")
+app.config["CONTACT_ALLOWED_ORIGIN"] = os.getenv("CONTACT_ALLOWED_ORIGIN")
 
 db = SQLAlchemy(app)
 mail = Mail(app)
@@ -256,9 +258,54 @@ def send_contact_notification(name, email, message):
     return True
 
 
+def contact_api_payload(name, email, message):
+    new_contact = Contact(name=name, email=email, message=message)
+
+    try:
+        db.session.add(new_contact)
+        db.session.commit()
+        notification_sent = send_contact_notification(name, email, message)
+        response_message = (
+            "Successfully submitted. We will contact you shortly."
+            if notification_sent
+            else "Successfully submitted. Your message has been saved and our team will follow up shortly."
+        )
+        return {
+            "ok": True,
+            "message": response_message,
+        }, 201
+    except Exception:
+        db.session.rollback()
+        return {
+            "ok": False,
+            "message": "An error occurred while submitting your message. Please try again.",
+        }, 500
+
+
+def build_cors_preflight_response():
+    response = make_response("", 204)
+    return apply_cors_headers(response)
+
+
+def apply_cors_headers(response):
+    allowed_origin = app.config["CONTACT_ALLOWED_ORIGIN"]
+    origin = request.headers.get("Origin")
+
+    if allowed_origin and origin == allowed_origin:
+        response.headers["Access-Control-Allow-Origin"] = origin
+        response.headers["Vary"] = "Origin"
+        response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+
+    return response
+
+
 @app.context_processor
 def inject_shared_context():
-    return {"featured_products": PRODUCTS}
+    return {
+        "featured_products": PRODUCTS,
+        "contact_api_url": app.config["CONTACT_API_URL"],
+    }
 
 
 @app.route("/health")
@@ -281,23 +328,43 @@ def index():
             flash("Please provide a valid email address.", "danger")
             return redirect(url_for("index") + "#contact")
 
-        new_contact = Contact(name=name, email=email, message=message)
-
-        try:
-            db.session.add(new_contact)
-            db.session.commit()
-            notification_sent = send_contact_notification(name, email, message)
-            if notification_sent:
-                flash("Successfully submitted. We will contact you shortly.", "success")
-            else:
-                flash("Successfully submitted. Your message has been saved and our team will follow up shortly.", "success")
-        except Exception:
-            db.session.rollback()
-            flash("An error occurred while submitting your message. Please try again.", "danger")
+        payload, status_code = contact_api_payload(name, email, message)
+        flash(payload["message"], "success" if status_code < 400 else "danger")
 
         return redirect(url_for("index") + "#contact")
 
     return render_template("index.html")
+
+
+@app.route("/api/contact", methods=["POST", "OPTIONS"])
+def contact_api():
+    if request.method == "OPTIONS":
+        return build_cors_preflight_response()
+
+    if request.is_json:
+        payload = request.get_json(silent=True) or {}
+        name = str(payload.get("name", "")).strip()
+        email = str(payload.get("email", "")).strip()
+        message = str(payload.get("message", "")).strip()
+    else:
+        name = request.form.get("name", "").strip()
+        email = request.form.get("email", "").strip()
+        message = request.form.get("message", "").strip()
+
+    if not name or not email:
+        response = jsonify({"ok": False, "message": "Name and email are required."})
+        response.status_code = 400
+        return apply_cors_headers(response)
+
+    if not is_valid_email(email):
+        response = jsonify({"ok": False, "message": "Please provide a valid email address."})
+        response.status_code = 400
+        return apply_cors_headers(response)
+
+    payload, status_code = contact_api_payload(name, email, message)
+    response = jsonify(payload)
+    response.status_code = status_code
+    return apply_cors_headers(response)
 
 
 @app.route("/products/<slug>")
