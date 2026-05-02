@@ -73,6 +73,12 @@ img {
     margin-left: 0;
 }
 
+.section-title-left,
+.section-subtitle-left {
+    text-align: left;
+    margin-left: 0;
+}
+
 .eyebrow {
     margin-bottom: 14px;
     color: var(--color-primary);
@@ -252,6 +258,20 @@ img {
     background: var(--color-white);
 }
 
+.btn-success-alt {
+    background: #128c7e;
+    border-color: #128c7e;
+    color: var(--color-white);
+    box-shadow: 0 14px 34px rgba(18, 140, 126, 0.2);
+}
+
+.btn-success-alt:hover,
+.btn-success-alt:focus {
+    background: #0d6f64;
+    border-color: #0d6f64;
+    color: var(--color-white);
+}
+
 .hero-carousel-section {
     position: relative;
     padding-top: 112px;
@@ -301,6 +321,25 @@ img {
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2rem;
+}
+
+.hero-proof {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 1.2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-proof strong {
+    color: var(--color-white);
+}
+
+.hero-proof span {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 0.95rem;
 }
 
 .hero-capability-strip {
@@ -384,6 +423,8 @@ img {
 .value-card,
 .service-card,
 .product-card,
+.case-study-card,
+.insight-card,
 .contact-panel,
 .detail-card,
 .detail-sidebar-panel,
@@ -400,6 +441,47 @@ img {
 .detail-sidebar-panel,
 .error-card {
     padding: 2rem;
+}
+
+.credibility-section {
+    background:
+        radial-gradient(circle at top right, rgba(10, 99, 194, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
+}
+
+.authority-panel,
+.proof-panel {
+    height: 100%;
+    padding: 2rem;
+    border-radius: 28px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--color-shadow);
+}
+
+.authority-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.authority-grid article {
+    padding: 1.15rem;
+    border-radius: 18px;
+    background: #f7f9fc;
+    border: 1px solid rgba(16, 24, 40, 0.08);
+}
+
+.authority-grid strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--color-ink);
+}
+
+.authority-grid span {
+    color: var(--color-muted);
+    font-size: 0.98rem;
 }
 
 .value-grid {
@@ -445,6 +527,12 @@ img {
     overflow: hidden;
 }
 
+.case-study-card,
+.insight-card {
+    height: 100%;
+    padding: 2rem;
+}
+
 .service-card {
     padding: 2rem;
 }
@@ -460,6 +548,20 @@ img {
     color: var(--color-primary);
     background: rgba(173, 46, 36, 0.1);
     font-size: 1.5rem;
+}
+
+.case-study-label,
+.insight-type {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(173, 46, 36, 0.1);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .service-card h3,
@@ -509,6 +611,13 @@ img {
 .form-label {
     color: var(--color-ink);
     font-weight: 700;
+}
+
+.contact-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-control {
@@ -701,6 +810,37 @@ textarea.form-control {
     text-align: center;
 }
 
+.floating-cta {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.floating-cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 132px;
+    padding: 0.85rem 1.1rem;
+    border-radius: 999px;
+    color: var(--color-white);
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 16px 34px rgba(16, 24, 40, 0.18);
+}
+
+.floating-cta-link.whatsapp {
+    background: #128c7e;
+}
+
+.floating-cta-link.calendly {
+    background: var(--color-primary);
+}
+
 .error-page {
     padding-top: 160px;
     min-height: 70vh;
@@ -780,7 +920,8 @@ textarea.form-control {
 
     .hero-capability-strip,
     .value-grid,
-    .footer-grid {
+    .footer-grid,
+    .authority-grid {
         grid-template-columns: 1fr;
     }
 
@@ -812,7 +953,8 @@ textarea.form-control {
     }
 
     .hero-actions,
-    .detail-actions {
+    .detail-actions,
+    .contact-cta-row {
         flex-direction: column;
     }
 
@@ -822,9 +964,21 @@ textarea.form-control {
 
     .story-card,
     .service-card,
+    .case-study-card,
+    .insight-card,
     .contact-panel,
     .detail-sidebar-panel,
     .error-card {
         padding: 1.4rem;
+    }
+
+    .floating-cta {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .floating-cta-link {
+        min-width: 0;
     }
 }

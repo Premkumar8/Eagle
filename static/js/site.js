@@ -142,11 +142,34 @@ function setupContactForm() {
     });
 }
 
+function setupExternalCtas() {
+    const config = window.EAGLE_SITE_CONFIG || {};
+    const whatsAppUrl = config.whatsAppUrl;
+    const calendlyUrl = config.calendlyUrl;
+
+    if (whatsAppUrl) {
+        document.querySelectorAll(".js-whatsapp-link").forEach((link) => {
+            link.setAttribute("href", whatsAppUrl);
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noreferrer");
+        });
+    }
+
+    if (calendlyUrl) {
+        document.querySelectorAll(".js-calendly-link").forEach((link) => {
+            link.setAttribute("href", calendlyUrl);
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noreferrer");
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     renderFeaturedProducts();
     setupFadeInObserver();
     setupNavbarState();
     setupContactForm();
+    setupExternalCtas();
 
     const year = document.getElementById("year");
     if (year) {
