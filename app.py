@@ -6,14 +6,34 @@ from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+def build_database_uri():
+    database_url = os.getenv("DATABASE_URL")
+    if database_url:
+        if database_url.startswith("postgres://"):
+            database_url = database_url.replace("postgres://", "postgresql://", 1)
+        return database_url
+
+    sqlite_path = os.getenv("SQLITE_DB_PATH")
+    if sqlite_path:
+        if not os.path.isabs(sqlite_path):
+            sqlite_path = os.path.join(basedir, sqlite_path)
+    else:
+        os.makedirs(app.instance_path, exist_ok=True)
+        sqlite_path = os.path.join(app.instance_path, "eagle.db")
+
+    sqlite_path = os.path.abspath(sqlite_path)
+    os.makedirs(os.path.dirname(sqlite_path), exist_ok=True)
+    return "sqlite:///" + sqlite_path.replace("\\", "/")
 
 app.config["SECRET_KEY"] = os.getenv(
     "SECRET_KEY",
     "dev-secret-key-change-me",
 )
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "eagle.db")
+app.config["SQLALCHEMY_DATABASE_URI"] = build_database_uri()
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.config["MAIL_SERVER"] = os.getenv("MAIL_SERVER", "smtp.gmail.com")
@@ -276,6 +296,7 @@ def contact_api_payload(name, email, message):
         }, 201
     except Exception:
         db.session.rollback()
+        app.logger.exception("Contact submission failed")
         return {
             "ok": False,
             "message": "An error occurred while submitting your message. Please try again.",
@@ -386,7 +407,13 @@ def page_not_found(_error):
     return render_template("404.html"), 404
 
 
-if __name__ == "__main__":
+def initialize_database():
     with app.app_context():
         db.create_all()
+
+
+initialize_database()
+
+
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

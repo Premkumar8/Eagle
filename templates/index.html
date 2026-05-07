@@ -317,6 +317,7 @@
 
             statusBox.className = "alert alert-info";
             statusBox.textContent = "Submitting your inquiry...";
+            statusBox.classList.remove("d-none");
 
             if (submitButton) {
                 submitButton.disabled = true;
@@ -331,10 +332,16 @@
                     body: JSON.stringify(payload)
                 });
 
-                const result = await response.json().catch(() => ({
-                    ok: false,
-                    message: "The contact service returned an unexpected response."
-                }));
+                const contentType = response.headers.get("content-type") || "";
+
+                if (!contentType.includes("application/json")) {
+                    statusBox.className = "alert alert-info";
+                    statusBox.textContent = "Submitting with the standard contact form...";
+                    HTMLFormElement.prototype.submit.call(form);
+                    return;
+                }
+
+                const result = await response.json();
 
                 statusBox.className = response.ok ? "alert alert-success" : "alert alert-danger";
                 statusBox.textContent = result.message || "Unable to submit your inquiry right now.";

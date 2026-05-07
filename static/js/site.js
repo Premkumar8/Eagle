@@ -120,10 +120,24 @@ function setupContactForm() {
                 body: JSON.stringify(payload)
             });
 
-            const result = await response.json().catch(() => ({
-                ok: false,
-                message: "The contact service returned an unexpected response."
-            }));
+            const contentType = response.headers.get("content-type") || "";
+
+            if (!contentType.includes("application/json")) {
+                const canUseStandardSubmit = form.getAttribute("action") || form.getAttribute("method");
+
+                if (canUseStandardSubmit) {
+                    statusBox.className = "alert alert-info";
+                    statusBox.textContent = "Submitting with the standard contact form...";
+                    HTMLFormElement.prototype.submit.call(form);
+                    return;
+                }
+
+                statusBox.className = "alert alert-danger";
+                statusBox.textContent = "The contact service is unavailable at the configured address. Please check the contact API URL.";
+                return;
+            }
+
+            const result = await response.json();
 
             statusBox.className = response.ok ? "alert alert-success" : "alert alert-danger";
             statusBox.textContent = result.message || "Unable to submit your inquiry right now.";
