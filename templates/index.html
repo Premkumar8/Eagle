@@ -1,209 +1,227 @@
 {% extends "base.html" %}
 
-{% block title %}Eagle Group of IT Solution | Software, Analytics And Cloud Solutions{% endblock %}
-{% block meta_description %}Professional software development, analytics, and cloud services with productized solutions for modern operations teams.{% endblock %}
+{% block title %}Eagle Group of IT Solution | CRM, Dashboards And Automation For SMEs{% endblock %}
+{% block meta_description %}Professional CRM systems, executive dashboards, workflow automation, and cloud-ready software for SMEs that need stronger operational visibility.{% endblock %}
 
 {% block content %}
-<section id="hero" class="hero-carousel-section">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(8, 15, 31, 0.82) 0%, rgba(8, 15, 31, 0.58) 45%, rgba(8, 15, 31, 0.3) 100%), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
-                    <div class="container">
-                        <div class="hero-copy hero-copy-wide">
-                            <p class="eyebrow">Software Engineering</p>
-                            <h1>Building digital systems that support growth, control, and better decisions.</h1>
-                            <p class="hero-text">Inspired by the structure used on leading IT services websites such as TCS, this homepage now focuses on clear solution categories, business outcomes, and stronger executive messaging rather than generic product filler.</p>
-                            <div class="hero-actions">
-                                <a href="#services" class="btn btn-primary">Explore Services</a>
-                                <a href="#contact" class="btn btn-outline-light">Talk To Our Team</a>
-                            </div>
+<section id="hero" class="hero-section">
+    <div class="hero-bg" aria-hidden="true">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-gradient"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center min-vh-100 g-5">
+            <div class="col-lg-6 hero-content">
+                <div class="hero-badge" data-animate>
+                    <span class="badge-dot"></span>
+                    <span>Eagle Group · Digital Systems Studio</span>
+                </div>
+                <h1 class="hero-title" data-animate>
+                    Structured Digital Systems.<br>
+                    <span>Measurable Business Results.</span>
+                </h1>
+                <p class="hero-subtitle" data-animate>
+                    We design CRM platforms, executive dashboards, workflow automation, and cloud-ready applications for SME teams that need better visibility, faster decisions, and less manual coordination.
+                </p>
+                <div class="hero-buttons" data-animate>
+                    <a href="#services" class="btn btn-primary btn-lg"><span>View Services</span><i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                    <a href="#contact" class="btn btn-outline btn-lg js-calendly-link"><i class="fas fa-calendar-check" aria-hidden="true"></i><span>Free Consultation</span></a>
+                </div>
+                <div class="hero-tagline" data-animate>
+                    <span>Code</span>
+                    <span class="tagline-dot">&middot;</span>
+                    <span>Clarity</span>
+                    <span class="tagline-dot">&middot;</span>
+                    <span>Control</span>
+                </div>
+            </div>
+
+            <div class="col-lg-6 hero-visual" data-animate>
+                <div class="spline-container" id="heroVisual">
+                    <div class="visual-decoration" aria-hidden="true">
+                        <div class="deco-ring ring-1"></div>
+                        <div class="deco-ring ring-2"></div>
+                        <div class="deco-dot dot-1"></div>
+                        <div class="deco-dot dot-2"></div>
+                        <div class="deco-dot dot-3"></div>
+                    </div>
+                    <div class="dashboard-model">
+                        <div class="model-topline">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="model-header">
+                            <p>Operations Control</p>
+                            <strong>Live CRM + KPI View</strong>
+                        </div>
+                        <div class="model-grid">
+                            <article>
+                                <span>Pipeline</span>
+                                <strong>EUR 1.8M</strong>
+                                <small>+18% this quarter</small>
+                            </article>
+                            <article>
+                                <span>Open Tasks</span>
+                                <strong>126</strong>
+                                <small>32 automated today</small>
+                            </article>
+                            <article class="model-chart">
+                                <span>Decision Signals</span>
+                                <div class="bars" aria-hidden="true">
+                                    <i style="height: 38%"></i>
+                                    <i style="height: 64%"></i>
+                                    <i style="height: 48%"></i>
+                                    <i style="height: 82%"></i>
+                                    <i style="height: 72%"></i>
+                                </div>
+                            </article>
+                            <article>
+                                <span>Response Time</span>
+                                <strong>24h</strong>
+                                <small>consultation follow-up</small>
+                            </article>
+                        </div>
+                        <div class="model-footer">
+                            <span>CRM</span>
+                            <span>Dashboards</span>
+                            <span>Automation</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(8, 15, 31, 0.82) 0%, rgba(8, 15, 31, 0.58) 45%, rgba(8, 15, 31, 0.3) 100%), url('{{ url_for('static', filename='images/App.png') }}');">
-                    <div class="container">
-                        <div class="hero-copy hero-copy-wide">
-                            <p class="eyebrow">Data And Analytics</p>
-                            <h1>Dashboards and reporting experiences designed for leadership and operations teams.</h1>
-                            <p class="hero-text">We create reporting products that help organizations review KPIs, monitor risk, and respond faster with reliable, presentation-ready views of business performance.</p>
-                            <div class="hero-actions">
-                                <a href="#products" class="btn btn-primary">View Solutions</a>
-                                <a href="#about" class="btn btn-outline-light">See Our Approach</a>
-                            </div>
-                        </div>
+        </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span>Scroll to explore</span>
+    </a>
+</section>
+
+<section id="about" class="about-section section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="section-label" data-animate>Who We Are</span>
+                <h2 class="section-title" data-animate>A focused technology partner for practical business transformation.</h2>
+            </div>
+        </div>
+
+        <div class="row align-items-center mt-5 g-5">
+            <div class="col-lg-6" data-animate>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=650&fit=crop" alt="Technology team reviewing a digital product">
+                    <div class="about-image-badge">
+                        <span class="badge-number">10+</span>
+                        <span>client engagements supported</span>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="hero-slide" style="background-image: linear-gradient(90deg, rgba(8, 15, 31, 0.82) 0%, rgba(8, 15, 31, 0.58) 45%, rgba(8, 15, 31, 0.3) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');">
-                    <div class="container">
-                        <div class="hero-copy hero-copy-wide">
-                            <p class="eyebrow">Cloud And Platforms</p>
-                            <h1>Reliable cloud foundations for applications that need security, scale, and operational discipline.</h1>
-                            <p class="hero-text">From architecture planning to production operations, Eagle Group helps teams modernize environments and launch business systems with more confidence.</p>
-                            <div class="hero-actions">
-                                <a href="#contact" class="btn btn-primary">Request A Consultation</a>
-                                <a href="#products" class="btn btn-outline-light">Featured Platforms</a>
-                            </div>
-                        </div>
+            <div class="col-lg-6" data-animate>
+                <div class="about-content">
+                    <p class="section-label">About Eagle Group</p>
+                    <h3>We turn scattered workflows into clear, reliable digital systems.</h3>
+                    <p>Our work centers on CRM, dashboards, automation, data visibility, and cloud platforms. Each engagement starts with the operational problem: what is slowing the team down, what leaders cannot see, and what needs to run with less manual effort.</p>
+                    <p>The result is software that supports daily adoption, management control, and future growth instead of becoming another disconnected tool.</p>
+                    <div class="stats-grid">
+                        <article class="stat-card">
+                            <strong>CRM</strong>
+                            <span>workflow design</span>
+                        </article>
+                        <article class="stat-card">
+                            <strong>KPI</strong>
+                            <span>dashboard delivery</span>
+                        </article>
+                        <article class="stat-card">
+                            <strong>AI</strong>
+                            <span>process automation</span>
+                        </article>
+                        <article class="stat-card">
+                            <strong>Cloud</strong>
+                            <span>production readiness</span>
+                        </article>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <div class="container">
-        <div class="hero-capability-strip fade-in">
-            <div><span>Services</span><strong>Software Engineering</strong></div>
-            <div><span>Analytics</span><strong>Dashboards And Forecasting</strong></div>
-            <div><span>Platforms</span><strong>Cloud And Operational Systems</strong></div>
-            <div><span>Engagements</span><strong>Advisory Through Delivery</strong></div>
-        </div>
     </div>
 </section>
 
-<section id="about" class="section">
+<section id="services" class="services-section section-padding">
+    <div class="services-pattern" aria-hidden="true"></div>
     <div class="container">
-        <div class="section-intro fade-in">
-            <p class="eyebrow">About Eagle Group</p>
-            <h2 class="section-title">A delivery partner for organizations that need more than a brochure website.</h2>
-            <p class="section-subtitle">We work at the intersection of software, operations, and analytics. That means every engagement is shaped around business processes, reporting needs, and the people who need to use the system every day.</p>
-        </div>
-        <div class="row g-4 align-items-stretch">
-            <div class="col-lg-6 fade-in">
-                <div class="story-card">
-                    <h3>How we approach delivery</h3>
-                    <p>We start with process clarity, define the operating outcomes that matter, and then build the system around those realities. The result is software that feels specific to the business instead of generic and difficult to adopt.</p>
-                    <p>Our teams support discovery, architecture, implementation, and refinement so product ideas move from concept to dependable day-to-day use.</p>
-                </div>
-            </div>
-            <div class="col-lg-6 fade-in">
-                <div class="value-grid">
-                    <article class="value-card">
-                        <span class="value-number">01</span>
-                        <h3>Clarity</h3>
-                        <p>We reduce ambiguity in workflows, data definitions, and ownership.</p>
-                    </article>
-                    <article class="value-card">
-                        <span class="value-number">02</span>
-                        <h3>Control</h3>
-                        <p>We design systems that make operational performance easier to monitor and manage.</p>
-                    </article>
-                    <article class="value-card">
-                        <span class="value-number">03</span>
-                        <h3>Scale</h3>
-                        <p>We build foundations that support growth instead of creating more fragmentation.</p>
-                    </article>
-                    <article class="value-card">
-                        <span class="value-number">04</span>
-                        <h3>Adoption</h3>
-                        <p>We prioritize interfaces and reporting that teams can actually use confidently.</p>
-                    </article>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="section-label" data-animate>Our Expertise</span>
+                <h2 class="section-title" data-animate>What We Build</h2>
+                <p class="section-subtitle" data-animate>Comprehensive digital solutions designed to give teams cleaner systems, stronger reporting, and faster decisions.</p>
             </div>
         </div>
-    </div>
-</section>
 
-<section class="section dashboard-showcase">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6 fade-in">
-                <div class="dashboard-cover-frame">
-                    <img src="{{ url_for('static', filename='images/App.png') }}" alt="Eagle Group analytics dashboard preview" class="dashboard-cover-image">
-                </div>
-            </div>
-            <div class="col-lg-6 fade-in">
-                <div class="section-intro section-intro-left">
-                    <p class="eyebrow">Dashboard Preview</p>
-                    <h2 class="section-title">A clearer, more executive-ready way to present performance data.</h2>
-                    <p class="section-subtitle">Our dashboard experiences are designed to help leadership and operations teams review KPIs, trends, and exceptions without depending on manual reports. The focus is speed, clarity, and confident action.</p>
-                </div>
-                <div class="story-card">
-                    <h3>What a professional dashboard should deliver</h3>
-                    <ul class="check-list">
-                        <li>Clean summaries for leadership, with drill-down detail for operational teams</li>
-                        <li>Consistent KPI definitions across sales, delivery, finance, and support</li>
-                        <li>Readable visual hierarchy that makes changes and risks immediately visible</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="section section-surface">
-    <div class="container">
-        <div class="section-intro fade-in">
-            <p class="eyebrow">Core Services</p>
-            <h2 class="section-title">Delivery capabilities built for practical transformation.</h2>
-            <p class="section-subtitle">From workflow applications to cloud-ready analytics platforms, we help teams replace manual effort with cleaner systems and better operating visibility.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 fade-in">
+        <div class="row mt-5 g-4">
+            <div class="col-lg-4 col-md-6" data-animate>
                 <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-                    <h3>Custom Software Engineering</h3>
-                    <p>Internal tools, portals, and workflow systems designed around the actual way your teams operate.</p>
-                    <ul class="compact-list">
-                        <li>Web applications and portals</li>
-                        <li>Business workflow automation</li>
-                        <li>Supportable, maintainable architecture</li>
-                    </ul>
+                    <div class="service-icon"><i class="fas fa-diagram-project" aria-hidden="true"></i></div>
+                    <h3>CRM And Workflow Systems</h3>
+                    <p>Custom CRM flows, customer records, permissions, approval chains, and team workspaces aligned to real operations.</p>
+                    <a href="#contact" class="service-hover">Discuss CRM <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
             </div>
-            <div class="col-lg-4 col-md-6 fade-in">
+            <div class="col-lg-4 col-md-6" data-animate>
                 <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Analytics And Reporting</h3>
-                    <p>Dashboards and reporting products that give stakeholders timely metrics instead of manually assembled summaries.</p>
-                    <ul class="compact-list">
-                        <li>KPI dashboards and data modeling</li>
-                        <li>Executive and team reporting</li>
-                        <li>Forecasting and trend visibility</li>
-                    </ul>
+                    <div class="service-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                    <h3>Executive Dashboards</h3>
+                    <p>Board-ready KPI dashboards, operational monitoring, drill-down reporting, and consistent metric definitions.</p>
+                    <a href="#contact" class="service-hover">Plan a Dashboard <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
             </div>
-            <div class="col-lg-4 col-md-6 fade-in">
+            <div class="col-lg-4 col-md-6" data-animate>
                 <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-cloud-arrow-up"></i></div>
-                    <h3>Cloud And Platform Delivery</h3>
-                    <p>Modern hosting, release workflows, and infrastructure planning for teams that need stronger reliability and control.</p>
-                    <ul class="compact-list">
-                        <li>Environment setup and modernization</li>
-                        <li>Security and deployment practices</li>
-                        <li>Scalable platform operations</li>
-                    </ul>
+                    <div class="service-icon"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                    <h3>AI Automation</h3>
+                    <p>Lead routing, reporting workflows, document handling, internal approvals, and AI-assisted operational processes.</p>
+                    <a href="#contact" class="service-hover">Automate Work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></div>
+                    <h3>Cloud Platforms</h3>
+                    <p>Secure hosting, release workflows, monitoring, backups, and cloud foundations for production business systems.</p>
+                    <a href="#contact" class="service-hover">Review Cloud <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-window-restore" aria-hidden="true"></i></div>
+                    <h3>Web Applications</h3>
+                    <p>Internal tools, client portals, admin panels, data products, and modern web experiences that are built to last.</p>
+                    <a href="#contact" class="service-hover">Scope an App <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+                    <h3>Data Engineering</h3>
+                    <p>Data pipelines, reporting models, integrations, data cleanup, and reliable foundations for analytics and ML work.</p>
+                    <a href="#contact" class="service-hover">Organize Data <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </article>
             </div>
         </div>
     </div>
 </section>
 
-<section id="products" class="section">
+<section id="products" class="section-padding products-section">
     <div class="container">
-        <div class="section-intro fade-in">
-            <p class="eyebrow">Featured Products</p>
-            <h2 class="section-title">Each software solution comes with delivery context, capabilities, and use cases.</h2>
-            <p class="section-subtitle">These solution areas show how Eagle Group packages engineering and analytics expertise into offerings that are easier for business teams to evaluate and adopt.</p>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="section-label" data-animate>Productized Platforms</span>
+                <h2 class="section-title" data-animate>Reusable foundations for faster project delivery.</h2>
+                <p class="section-subtitle" data-animate>These platform areas show how Eagle Group packages engineering, analytics, and automation capability into clearer business offerings.</p>
+            </div>
         </div>
-        <div class="row g-4">
-            {% for product in featured_products %}
+        <div id="featuredProductsGrid" class="row mt-5 g-4">
+            {% for product in featured_products[:3] %}
             <div class="col-lg-4 col-md-6 fade-in">
                 <article class="product-card h-100">
                     <img src="{{ product.hero_image }}" class="card-img-top" alt="{{ product.title }}">
@@ -216,7 +234,7 @@
                             <li>{{ outcome }}</li>
                             {% endfor %}
                         </ul>
-                        <a class="card-link" href="{{ url_for('product_detail', slug=product.slug) }}">View Solution</a>
+                        <a class="card-link" href="{{ url_for('product_detail', slug=product.slug) }}">View Solution <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </article>
             </div>
@@ -225,139 +243,326 @@
     </div>
 </section>
 
-<section id="contact" class="section section-surface">
+<section id="pricing" class="pricing-section section-padding">
     <div class="container">
-        <div class="section-intro fade-in">
-            <p class="eyebrow">Contact</p>
-            <h2 class="section-title">Start with the business problem. We will help shape the right solution.</h2>
-            <p class="section-subtitle">Share the process you want to improve, the reporting you need, or the product idea you want to validate. We will follow up with the right next step.</p>
-        </div>
-        <div class="row g-5 align-items-start">
-            <div class="col-lg-7 fade-in">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-                <div id="contactFormStatus" class="d-none" role="status" aria-live="polite"></div>
-                <form method="POST" action="{{ url_for('index') }}#contact" class="contact-form" data-api-url="{{ contact_api_url }}">
-                    <div class="mb-3">
-                        <label class="form-label" for="name">Your name</label>
-                        <input id="name" type="text" class="form-control" name="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="email">Work email</label>
-                        <input id="email" type="email" class="form-control" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="message">What do you need help with?</label>
-                        <textarea id="message" class="form-control" name="message" rows="6" placeholder="Enter your message here..."></textarea>
-                    </div>
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox" value="yes" id="privacyConsent" required>
-                        <label class="form-check-label" for="privacyConsent">
-                            I consent to Eagle Group storing this submission to respond to my inquiry.
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                </form>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="section-label" data-animate>Prices</span>
+                <h2 class="section-title" data-animate>Services And Starting Prices</h2>
+                <p class="section-subtitle" data-animate>Professional packages for websites, CRM systems, and intelligent applications. Final scope is confirmed after a short project discussion.</p>
             </div>
-            <div class="col-lg-5 fade-in">
-                <div class="contact-panel">
-                    <p class="contact-label">Engagement Focus</p>
-                    <h3>Typical conversations include:</h3>
-                    <ul class="check-list">
-                        <li>Replacing spreadsheet-heavy reporting</li>
-                        <li>Building internal systems for customer or operations teams</li>
-                        <li>Planning analytics, forecasting, or ML-enabled workflows</li>
-                        <li>Improving release, hosting, or cloud operating posture</li>
-                    </ul>
-                    <div class="contact-status">
-                        <strong>Response approach</strong>
-                        <p>We review the problem, clarify the desired outcome, and recommend a practical next step rather than pushing a one-size-fits-all package.</p>
+        </div>
+
+        <div class="row mt-5 g-4 align-items-stretch">
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="pricing-card h-100">
+                    <div class="pricing-header">
+                        <span class="pricing-type">Website</span>
+                        <h3>Basic Website</h3>
+                        <p class="price">INR 5,000 <span>starting from</span></p>
                     </div>
+                    <ul class="pricing-features">
+                        <li>Responsive business website</li>
+                        <li>Essential pages and contact form</li>
+                        <li>Basic SEO setup</li>
+                        <li>Includes 1 year maintenance</li>
+                        <li>Live support and assistance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                </article>
+            </div>
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="pricing-card h-100">
+                    <div class="pricing-header">
+                        <span class="pricing-type">Website</span>
+                        <h3>Professional Website</h3>
+                        <p class="price">INR 8,999 <span>starting from</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Premium responsive website</li>
+                        <li>Professional UI/UX sections</li>
+                        <li>Lead-focused forms and integrations</li>
+                        <li>Includes 1 year maintenance</li>
+                        <li>Live support and assistance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                </article>
+            </div>
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="pricing-card popular h-100">
+                    <div class="popular-badge">Popular</div>
+                    <div class="pricing-header">
+                        <span class="pricing-type">CRM</span>
+                        <h3>CRM System</h3>
+                        <p class="price">INR 12,000 <span>starting from</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Lead and customer management</li>
+                        <li>Workflow and follow-up tracking</li>
+                        <li>Dashboard reporting</li>
+                        <li>Includes 1 year maintenance</li>
+                        <li>Live support and assistance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-100">Get Started</a>
+                </article>
+            </div>
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="pricing-card h-100">
+                    <div class="pricing-header">
+                        <span class="pricing-type">AI App</span>
+                        <h3>AI And Intelligent App</h3>
+                        <p class="price">INR 25,000 <span>starting from</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>AI-assisted workflow features</li>
+                        <li>Intelligent app logic</li>
+                        <li>Automation and data handling</li>
+                        <li>Includes 1 year maintenance</li>
+                        <li>Live support and assistance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                </article>
+            </div>
+        </div>
+
+        <div class="additional-services" data-animate>
+            <span>Included with every package:</span>
+            <p>1 year maintenance, live support, launch assistance, and practical guidance after delivery.</p>
+        </div>
+    </div>
+</section>
+
+<section id="process" class="process-section section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="section-label" data-animate>Our Approach</span>
+                <h2 class="section-title" data-animate>How We Work</h2>
+                <p class="section-subtitle" data-animate>A streamlined process designed to reduce ambiguity and keep delivery tied to the business outcome.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5 g-4">
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+                    <h3>Discover</h3>
+                    <p>We understand your workflow, users, data sources, goals, and operating constraints.</p>
+                </article>
+            </div>
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-pencil-ruler" aria-hidden="true"></i></div>
+                    <h3>Design</h3>
+                    <p>We shape the architecture, screens, data flow, and delivery plan before build starts.</p>
+                </article>
+            </div>
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                    <h3>Develop</h3>
+                    <p>We build, integrate, test, and review each workflow with the people who will use it.</p>
+                </article>
+            </div>
+            <div class="col-lg-3 col-md-6" data-animate>
+                <article class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+                    <h3>Launch & Support</h3>
+                    <p>We deploy, monitor, document, and support the product after launch.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why" class="why-section section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="section-label" data-animate>Our Difference</span>
+                <h2 class="section-title" data-animate>Why Teams Choose Eagle Group</h2>
+            </div>
+        </div>
+
+        <div class="row mt-5 g-4">
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="why-card">
+                    <div class="why-icon"><i class="fas fa-fingerprint" aria-hidden="true"></i></div>
+                    <h3>Custom Operating Fit</h3>
+                    <p>Every system is shaped around your process, users, governance, and reporting requirements.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="why-card">
+                    <div class="why-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
+                    <h3>Clarity-First Interfaces</h3>
+                    <p>We make complex workflow and data decisions easier to scan, understand, and act on.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="why-card">
+                    <div class="why-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+                    <h3>Secure Foundations</h3>
+                    <p>Architecture, permissions, backups, and deployment practices are considered from the start.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="why-card">
+                    <div class="why-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                    <h3>Transparent Delivery</h3>
+                    <p>You get clear scope, practical milestones, and delivery conversations grounded in outcomes.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="why-card">
+                    <div class="why-icon"><i class="fas fa-cubes" aria-hidden="true"></i></div>
+                    <h3>Brand And Tech Alignment</h3>
+                    <p>Visual design, workflow design, data structure, and engineering stay connected in one delivery track.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-animate>
+                <article class="why-card">
+                    <div class="why-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+                    <h3>Post-Launch Support</h3>
+                    <p>We help teams adopt, improve, and maintain the system after the first release is live.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="highlight-band">
+    <div class="container">
+        <div class="highlight-content" data-animate>
+            <p>"Eagle Group helps SME teams replace spreadsheet-heavy operations with clear CRM systems, reliable dashboards, and automation that can scale."</p>
+            <div class="highlight-cities">
+                <span>Europe</span>
+                <span class="dot">&middot;</span>
+                <span>India</span>
+                <span class="dot">&middot;</span>
+                <span>Remote Delivery</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="section-label" data-animate>Get In Touch</span>
+                <h2 class="section-title" data-animate>Let's Build Your Next Digital System</h2>
+            </div>
+        </div>
+
+        <div class="row mt-5 g-4">
+            <div class="col-lg-5" data-animate>
+                <aside class="contact-info">
+                    <p class="contact-intro">Tell us what you want to improve, automate, or launch. We will help turn the idea into a clear, operations-ready digital product.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+                            <div class="contact-text">
+                                <span>Phone / WhatsApp</span>
+                                <a class="js-whatsapp-link" href="#contact">+91 87785 84642</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
+                            <div class="contact-text">
+                                <span>Consultation</span>
+                                <a class="js-calendly-link" href="#contact">Book a free call</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                            <div class="contact-text">
+                                <span>Delivery</span>
+                                <strong>Europe, India and remote clients</strong>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="col-lg-7" data-animate>
+                <div class="contact-form-wrapper">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <div id="contactFormStatus" class="d-none" role="status" aria-live="polite"></div>
+                    <form method="POST" action="{{ url_for('index') }}#contact" class="contact-form" data-api-url="{{ contact_api_url }}">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Your Name <span>*</span></label>
+                                    <input id="name" class="form-control" type="text" name="name" placeholder="Your name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="business">Business / Brand Name</label>
+                                    <input id="business" class="form-control" type="text" name="business" placeholder="Company name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email Address <span>*</span></label>
+                                    <input id="email" class="form-control" type="email" name="email" placeholder="you@example.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone">Phone / WhatsApp</label>
+                                    <input id="phone" class="form-control" type="tel" name="phone" placeholder="+91 98765 43210">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="projectType">Project</label>
+                                    <select id="projectType" class="form-control form-select" name="project_type">
+                                        <option value="" selected>Select a service</option>
+                                        <option value="CRM system">CRM system</option>
+                                        <option value="Dashboard">Dashboard</option>
+                                        <option value="Automation">Automation</option>
+                                        <option value="Web application">Web application</option>
+                                        <option value="Cloud or data work">Cloud or data work</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="message">Message / Requirements</label>
+                                    <textarea id="message" class="form-control" name="message" rows="4" placeholder="Tell us about the workflow, dashboard, or system you want to build."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <input class="hidden" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" value="yes" id="privacyConsent" required>
+                                    <label class="form-check-label" for="privacyConsent">
+                                        I consent to Eagle Group storing this submission to respond to my inquiry.
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-submit"><span>Send Inquiry</span><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
-{% endblock %}
-
-{% block extra_scripts %}
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.querySelector(".contact-form");
-        const statusBox = document.getElementById("contactFormStatus");
-
-        if (!form || !statusBox) {
-            return;
-        }
-
-        form.addEventListener("submit", async function (event) {
-            const apiUrl = form.dataset.apiUrl;
-
-            if (!apiUrl) {
-                return;
-            }
-
-            event.preventDefault();
-
-            const submitButton = form.querySelector('button[type="submit"]');
-            const formData = new FormData(form);
-            const payload = {
-                name: (formData.get("name") || "").toString().trim(),
-                email: (formData.get("email") || "").toString().trim(),
-                message: (formData.get("message") || "").toString().trim()
-            };
-
-            statusBox.className = "alert alert-info";
-            statusBox.textContent = "Submitting your inquiry...";
-            statusBox.classList.remove("d-none");
-
-            if (submitButton) {
-                submitButton.disabled = true;
-            }
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                const contentType = response.headers.get("content-type") || "";
-
-                if (!contentType.includes("application/json")) {
-                    statusBox.className = "alert alert-info";
-                    statusBox.textContent = "Submitting with the standard contact form...";
-                    HTMLFormElement.prototype.submit.call(form);
-                    return;
-                }
-
-                const result = await response.json();
-
-                statusBox.className = response.ok ? "alert alert-success" : "alert alert-danger";
-                statusBox.textContent = result.message || "Unable to submit your inquiry right now.";
-
-                if (response.ok) {
-                    form.reset();
-                }
-            } catch (_error) {
-                statusBox.className = "alert alert-danger";
-                statusBox.textContent = "Unable to reach the contact service right now. Please try again shortly.";
-            } finally {
-                if (submitButton) {
-                    submitButton.disabled = false;
-                }
-            }
-        });
-    });
-</script>
 {% endblock %}

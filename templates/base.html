@@ -1,39 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Eagle Group of IT Solution{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Eagle Group of IT Solution delivers modern software, analytics, and cloud solutions for growing businesses.{% endblock %}">
+    <title>{% block title %}Eagle Group of IT Solution | CRM, Dashboards And Automation{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Eagle Group builds CRM platforms, executive dashboards, workflow automation, and cloud-ready software for SME teams.{% endblock %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     {% block extra_head %}{% endblock %}
 </head>
-<body>
+<body data-root-path="{{ url_for('index') }}">
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-mark">
+            <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo-transparent.png') }}" alt="">
+            <span></span>
+        </div>
+        <p>Preparing your digital workspace</p>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+        <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+    </button>
+
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
             <div class="container">
-                <div class="nav-shell">
-                    <a class="navbar-brand" href="{{ url_for('index') }}">
-                        <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo.png') }}" alt="Eagle Group of IT Solution logo">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto align-items-lg-center nav-cluster">
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#hero">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#about">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#services">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#products">Products</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#contact">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link nav-cta" href="{{ url_for('index') }}#contact">Book a Consultation</a></li>
-                        </ul>
-                    </div>
+                <a class="navbar-brand" href="{{ url_for('index') }}#hero" aria-label="Eagle Group home">
+                    <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo.png') }}" alt="Eagle Group of IT Solution logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center nav-cluster">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#products">Platforms</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#process">Process</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#why">Why Eagle</a></li>
+                        <li class="nav-item nav-cta">
+                            <a class="btn btn-primary btn-nav js-calendly-link" href="{{ url_for('index') }}#contact">
+                                <span>Book a Call</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -45,39 +61,34 @@
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a class="footer-brand" href="{{ url_for('index') }}">
-                        <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo-transparent.png') }}" alt="Eagle Group of IT Solution logo">
-                    </a>
-                    <p class="footer-copy">We design reliable digital products, modernize workflows, and help teams use data with more clarity and control.</p>
-                    <div class="social-icons">
-                        <a href="{{ url_for('index') }}#contact" aria-label="Contact Eagle Group of IT Solution"><i class="fas fa-envelope"></i></a>
-                        <a href="{{ url_for('index') }}#products" aria-label="Featured products"><i class="fas fa-cube"></i></a>
-                        <a href="{{ url_for('index') }}#services" aria-label="Services"><i class="fas fa-briefcase"></i></a>
+            <div class="footer-main">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a class="footer-logo" href="{{ url_for('index') }}#hero">
+                            <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo-transparent.png') }}" alt="Eagle Group of IT Solution logo">
+                        </a>
+                        <p class="footer-tagline">Digital Systems Studio</p>
+                        <p class="footer-motto">Code &middot; Clarity &middot; Control</p>
                     </div>
-                </div>
-                <div>
-                    <p class="footer-heading">Capabilities</p>
-                    <ul class="footer-links">
-                        <li><a href="{{ url_for('index') }}#services">Software Engineering</a></li>
-                        <li><a href="{{ url_for('index') }}#services">Analytics Platforms</a></li>
-                        <li><a href="{{ url_for('index') }}#services">Cloud Architecture</a></li>
-                        <li><a href="{{ url_for('index') }}#contact">Advisory And Delivery</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <p class="footer-heading">Featured Products</p>
-                    <ul class="footer-links">
-                        {% for product in featured_products[:4] if featured_products %}
-                        <li><a href="{{ url_for('product_detail', slug=product.slug) }}">{{ product.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div>
-                    <p class="footer-heading">Get In Touch</p>
-                    <p class="footer-copy">Tell us what you are building, what is slowing the team down, or what you need to launch next.</p>
-                    <a class="btn btn-primary footer-btn" href="{{ url_for('index') }}#contact">Start the Conversation</a>
+                    <div class="col-lg-4 col-md-6">
+                        <nav class="footer-nav" aria-label="Footer navigation">
+                            <a href="{{ url_for('index') }}#about">About</a>
+                            <a href="{{ url_for('index') }}#services">Services</a>
+                            <a href="{{ url_for('index') }}#pricing">Pricing</a>
+                            <a href="{{ url_for('index') }}#process">Process</a>
+                            <a href="{{ url_for('index') }}#contact">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="footer-social">
+                            <a class="js-whatsapp-link" href="{{ url_for('index') }}#contact" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                            <a class="js-calendly-link" href="{{ url_for('index') }}#contact" aria-label="Book a call"><i class="fas fa-calendar" aria-hidden="true"></i></a>
+                            {% if featured_products %}
+                            <a href="{{ url_for('product_detail', slug=featured_products[0].slug) }}" aria-label="View platforms"><i class="fas fa-cube" aria-hidden="true"></i></a>
+                            {% endif %}
+                            <a href="{{ url_for('index') }}#contact" aria-label="Contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -86,46 +97,15 @@
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navbar = document.querySelector(".navbar");
-            const sections = document.querySelectorAll("section[id]");
-            const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                    }
-                });
-            }, { threshold: 0.12 });
-
-            document.querySelectorAll(".fade-in").forEach((item) => observer.observe(item));
-            document.getElementById("year").textContent = new Date().getFullYear();
-
-            const syncActiveLink = () => {
-                let current = "";
-                sections.forEach((section) => {
-                    if (window.scrollY >= section.offsetTop - 180) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach((link) => {
-                    const href = link.getAttribute("href") || "";
-                    const isHashLink = href.includes("#") && !link.classList.contains("nav-cta");
-                    link.classList.toggle("active", isHashLink && current && href.endsWith(`#${current}`));
-                });
-            };
-
-            syncActiveLink();
-
-            window.addEventListener("scroll", function () {
-                navbar.classList.toggle("navbar-scrolled", window.scrollY > 24);
-                syncActiveLink();
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="{{ url_for('static', filename='js/site-config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/site.js') }}"></script>
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>

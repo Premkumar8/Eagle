@@ -278,6 +278,16 @@ def send_contact_notification(name, email, message):
     return True
 
 
+def compose_contact_message(message, business=None, phone=None, project_type=None):
+    details = [
+        (message or "").strip(),
+        f"Business: {business.strip()}" if business and business.strip() else "",
+        f"Phone / WhatsApp: {phone.strip()}" if phone and phone.strip() else "",
+        f"Project Type: {project_type.strip()}" if project_type and project_type.strip() else "",
+    ]
+    return "\n\n".join(detail for detail in details if detail)
+
+
 def contact_api_payload(name, email, message):
     new_contact = Contact(name=name, email=email, message=message)
 
@@ -339,7 +349,12 @@ def index():
     if request.method == "POST":
         name = request.form.get("name", "").strip()
         email = request.form.get("email", "").strip()
-        message = request.form.get("message", "").strip()
+        message = compose_contact_message(
+            request.form.get("message", ""),
+            business=request.form.get("business", ""),
+            phone=request.form.get("phone", ""),
+            project_type=request.form.get("project_type", ""),
+        )
 
         if not name or not email:
             flash("Name and email are required.", "danger")
@@ -370,7 +385,12 @@ def contact_api():
     else:
         name = request.form.get("name", "").strip()
         email = request.form.get("email", "").strip()
-        message = request.form.get("message", "").strip()
+        message = compose_contact_message(
+            request.form.get("message", ""),
+            business=request.form.get("business", ""),
+            phone=request.form.get("phone", ""),
+            project_type=request.form.get("project_type", ""),
+        )
 
     if not name or not email:
         response = jsonify({"ok": False, "message": "Name and email are required."})
