@@ -25,7 +25,7 @@ function createProductCard(product, rootPath) {
         </div>
     `;
 }
-
+// Global configuration object for site-wide settings
 function initPreloader() {
     const preloader = document.getElementById("preloader");
 

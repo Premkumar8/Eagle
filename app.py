@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-
+# Database URI builder that supports both DATABASE_URL and SQLITE_DB_PATH environment variables.
 def build_database_uri():
     database_url = os.getenv("DATABASE_URL")
     if database_url:
