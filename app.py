@@ -151,8 +151,8 @@ PRODUCTS = [
         "tagline": "Coordinate customer, revenue, and workflow operations in one controlled environment.",
         "summary": "A modular business operations suite that supports CRM workflows, customer records, approvals, and internal reporting.",
         "description": "Enterprise Systems Manager is designed for growing organizations that have outgrown fragmented admin processes. It centralizes customer data, task ownership, and reporting so teams can work with fewer handoffs and better accountability.",
-        "hero_image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop",
-        "detail_image": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+        "hero_image": "/static/images/App.png",
+        "detail_image": "/static/images/App.png",
         "outcomes": ["Stronger process control", "Improved team visibility", "Cleaner operational records"],
         "capabilities": [
             {

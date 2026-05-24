@@ -12,20 +12,19 @@ function createProductCard(product, rootPath) {
 
     return `
         <div class="col-lg-4 col-md-6 fade-in">
-            <article class="product-card h-100">
-                <img src="${escapeHtml(product.heroImage)}" class="card-img-top" alt="${escapeHtml(product.title)}">
-                <div class="card-body">
-                    <p class="product-category">${escapeHtml(product.category)}</p>
-                    <h3 class="card-title">${escapeHtml(product.title)}</h3>
-                    <p class="card-text">${escapeHtml(product.summary)}</p>
-                    <ul class="product-outcomes">${outcomes}</ul>
-                    <a class="card-link" href="${rootPath}products/${escapeHtml(product.slug)}/">View Solution <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <article class="product-card h-100" style="border-radius: 24px; overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--color-shadow);">
+                <img src="${escapeHtml(product.heroImage)}" class="card-img-top" alt="${escapeHtml(product.title)}" style="height: 200px; object-fit: cover;">
+                <div class="card-body" style="padding: 2rem;">
+                    <p class="product-category" style="font-size: 0.75rem; color: var(--color-primary); font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">${escapeHtml(product.category)}</p>
+                    <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1rem;">${escapeHtml(product.title)}</h3>
+                    <p class="card-text" style="font-size: 0.9rem; color: var(--color-muted); line-height: 1.5;">${escapeHtml(product.summary)}</p>
+                    <a class="card-link" href="${rootPath}products/${escapeHtml(product.slug)}/" style="display: inline-block; margin-top: 1.5rem; font-weight: 700; color: var(--color-primary);">Explore Solution <i class="fas fa-arrow-right" style="margin-left: 0.3rem;"></i></a>
                 </div>
             </article>
         </div>
     `;
 }
-// Global configuration object for site-wide settings
+
 function initPreloader() {
     const preloader = document.getElementById("preloader");
 
@@ -61,10 +60,6 @@ function initThemeToggle() {
         if (themeIcon) {
             themeIcon.classList.toggle("fa-sun", theme === "dark");
             themeIcon.classList.toggle("fa-moon", theme !== "dark");
-        }
-
-        if (window.eagleHeroCanvas && typeof window.eagleHeroCanvas.syncTheme === "function") {
-            window.eagleHeroCanvas.syncTheme();
         }
     };
 
@@ -215,29 +210,16 @@ function initGsapAnimations() {
 
     const gsap = window.gsap;
 
-    gsap.fromTo(".hero-badge, .hero-title, .hero-subtitle, .hero-buttons, .hero-tagline", {
+    gsap.fromTo(".hero-badge, .hero-title, .hero-subtitle, .hero-buttons", {
         opacity: 0,
-        y: 30
+        y: 20
     }, {
         opacity: 1,
         y: 0,
-        duration: 0.85,
+        duration: 1.2,
         ease: "power3.out",
-        stagger: 0.1,
-        delay: 0.25
-    });
-
-    gsap.fromTo(".dashboard-model", {
-        opacity: 0,
-        y: 40,
-        rotateY: -18
-    }, {
-        opacity: 1,
-        y: 0,
-        rotateY: -12,
-        duration: 1,
-        ease: "power3.out",
-        delay: 0.45
+        stagger: 0.15,
+        delay: 0.3
     });
 
     if (!window.ScrollTrigger) {
@@ -246,162 +228,24 @@ function initGsapAnimations() {
 
     gsap.registerPlugin(window.ScrollTrigger);
 
-    [".service-card", ".pricing-card", ".process-step", ".why-card", ".product-card"].forEach((selector) => {
+    [".service-card", ".product-card", ".pricing-card", ".process-step", ".why-card"].forEach((selector) => {
         gsap.utils.toArray(selector).forEach((item, index) => {
             gsap.fromTo(item, {
                 opacity: 0,
-                y: 36
+                y: 30
             }, {
                 opacity: 1,
                 y: 0,
-                duration: 0.65,
-                delay: (index % 3) * 0.05,
+                duration: 0.8,
+                delay: (index % 3) * 0.1,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: item,
-                    start: "top 86%",
+                    start: "top 85%",
                     toggleActions: "play none none none"
                 }
             });
         });
-    });
-
-    if (document.querySelector(".highlight-content")) {
-        gsap.to(".highlight-content", {
-            y: -24,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".highlight-band",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1
-            }
-        });
-    }
-}
-
-function initHeroCanvas() {
-    const canvas = document.getElementById("heroCanvas");
-
-    if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
-    }
-
-    const context = canvas.getContext("2d");
-    const particles = [];
-    const particleCount = Math.min(95, Math.max(52, Math.floor(window.innerWidth / 18)));
-    let width = 0;
-    let height = 0;
-    let color = "#7a1f2a";
-    let lineColor = "rgba(122, 31, 42, 0.16)";
-    let rafId = 0;
-    const pointer = { x: 0, y: 0 };
-
-    const syncTheme = () => {
-        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-        color = isDark ? "#d6b25f" : "#7a1f2a";
-        lineColor = isDark ? "rgba(214, 178, 95, 0.16)" : "rgba(122, 31, 42, 0.14)";
-    };
-
-    const resize = () => {
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        width = canvas.offsetWidth || window.innerWidth;
-        height = canvas.offsetHeight || window.innerHeight;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        context.setTransform(dpr, 0, 0, dpr, 0, 0);
-    };
-
-    const seed = () => {
-        particles.length = 0;
-        for (let index = 0; index < particleCount; index += 1) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.28,
-                vy: (Math.random() - 0.5) * 0.28,
-                size: Math.random() * 1.8 + 0.8
-            });
-        }
-    };
-
-    const draw = () => {
-        context.clearRect(0, 0, width, height);
-
-        particles.forEach((particle, index) => {
-            particle.x += particle.vx + pointer.x * 0.012;
-            particle.y += particle.vy + pointer.y * 0.012;
-
-            if (particle.x < -20) particle.x = width + 20;
-            if (particle.x > width + 20) particle.x = -20;
-            if (particle.y < -20) particle.y = height + 20;
-            if (particle.y > height + 20) particle.y = -20;
-
-            context.beginPath();
-            context.fillStyle = color;
-            context.globalAlpha = 0.42;
-            context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            context.fill();
-
-            for (let nextIndex = index + 1; nextIndex < particles.length; nextIndex += 1) {
-                const next = particles[nextIndex];
-                const dx = particle.x - next.x;
-                const dy = particle.y - next.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < 118) {
-                    context.beginPath();
-                    context.globalAlpha = (118 - distance) / 118;
-                    context.strokeStyle = lineColor;
-                    context.lineWidth = 1;
-                    context.moveTo(particle.x, particle.y);
-                    context.lineTo(next.x, next.y);
-                    context.stroke();
-                }
-            }
-        });
-
-        context.globalAlpha = 1;
-        rafId = window.requestAnimationFrame(draw);
-    };
-
-    resize();
-    syncTheme();
-    seed();
-    draw();
-
-    window.eagleHeroCanvas = { syncTheme };
-
-    window.addEventListener("resize", () => {
-        window.cancelAnimationFrame(rafId);
-        resize();
-        seed();
-        draw();
-    }, { passive: true });
-
-    window.addEventListener("mousemove", (event) => {
-        pointer.x = (event.clientX / window.innerWidth - 0.5) * 2;
-        pointer.y = (event.clientY / window.innerHeight - 0.5) * 2;
-    }, { passive: true });
-}
-
-function initHeroVisualTilt() {
-    const visual = document.getElementById("heroVisual");
-    const model = visual ? visual.querySelector(".dashboard-model") : null;
-
-    if (!visual || !model || window.matchMedia("(max-width: 991px)").matches) {
-        return;
-    }
-
-    visual.addEventListener("mousemove", (event) => {
-        const rect = visual.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width - 0.5;
-        const y = (event.clientY - rect.top) / rect.height - 0.5;
-        model.style.transform = `rotateX(${8 - y * 10}deg) rotateY(${-12 + x * 14}deg) translateY(-6px)`;
-    });
-
-    visual.addEventListener("mouseleave", () => {
-        model.style.transform = "";
     });
 }
 
@@ -442,19 +286,11 @@ function setupContactForm() {
 
         const submitButton = form.querySelector('button[type="submit"]');
         const message = (formData.get("message") || "").toString().trim();
-        const projectType = (formData.get("project_type") || "").toString().trim();
-        const business = (formData.get("business") || "").toString().trim();
-        const phone = (formData.get("phone") || "").toString().trim();
-        const extraDetails = [
-            business && `Business: ${business}`,
-            phone && `Phone / WhatsApp: ${phone}`,
-            projectType && `Project Type: ${projectType}`
-        ].filter(Boolean);
 
         const payload = {
             name: (formData.get("name") || "").toString().trim(),
             email: (formData.get("email") || "").toString().trim(),
-            message: [message, ...extraDetails].filter(Boolean).join("\n\n")
+            message: message
         };
 
         statusBox.className = "alert alert-info";
@@ -555,8 +391,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderFeaturedProducts();
     initRevealAnimations();
     initGsapAnimations();
-    initHeroCanvas();
-    initHeroVisualTilt();
     setupContactForm();
     initBackToTop();
     initCurrentYear();

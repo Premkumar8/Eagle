@@ -4,142 +4,155 @@
 {% block meta_description %}Professional CRM systems, executive dashboards, workflow automation, and cloud-ready software for SMEs that need stronger operational visibility.{% endblock %}
 
 {% block content %}
-<section id="hero" class="hero-section">
-    <div class="hero-bg" aria-hidden="true">
-        <canvas id="heroCanvas"></canvas>
-        <div class="hero-gradient"></div>
-    </div>
-    <div class="container">
-        <div class="row align-items-center min-vh-100 g-5">
-            <div class="col-lg-6 hero-content">
-                <div class="hero-badge" data-animate>
-                    <span class="badge-dot"></span>
-                    <span>Eagle Group · Digital Systems Studio</span>
-                </div>
-                <h1 class="hero-title" data-animate>
-                    Structured Digital Systems.<br>
-                    <span>Measurable Business Results.</span>
-                </h1>
-                <p class="hero-subtitle" data-animate>
-                    We design CRM platforms, executive dashboards, workflow automation, and cloud-ready applications for SME teams that need better visibility, faster decisions, and less manual coordination.
-                </p>
-                <div class="hero-buttons" data-animate>
-                    <a href="#services" class="btn btn-primary btn-lg"><span>View Services</span><i class="fas fa-arrow-down" aria-hidden="true"></i></a>
-                    <a href="#contact" class="btn btn-outline btn-lg js-calendly-link"><i class="fas fa-calendar-check" aria-hidden="true"></i><span>Free Consultation</span></a>
-                </div>
-                <div class="hero-tagline" data-animate>
-                    <span>Code</span>
-                    <span class="tagline-dot">&middot;</span>
-                    <span>Clarity</span>
-                    <span class="tagline-dot">&middot;</span>
-                    <span>Control</span>
+<section id="hero" class="hero-carousel-section">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- Slide 1: Enterprise Focus -->
+            <div class="carousel-item active">
+                <div class="hero-slide-bg" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="hero-slide-content text-white">
+                    <div class="container">
+                        <div class="row align-items-center min-vh-75">
+                            <div class="col-lg-10 offset-lg-1 text-center">
+                                <div class="hero-badge fade-in" data-animate>
+                                    <span class="badge-dot"></span>
+                                    <span>Business Systems Engineering</span>
+                                </div>
+                                <h1 class="hero-title fade-in" data-animate>
+                                    CRM, Dashboards and Automation<br>
+                                    <span>Built for Growing Teams.</span>
+                                </h1>
+                                <p class="hero-subtitle mx-auto fade-in" data-animate style="max-width: 800px; color: rgba(255,255,255,0.9);">
+                                    We design practical digital systems that centralize customer data, simplify reporting, and reduce manual work across your operations.
+                                </p>
+                                <div class="hero-buttons fade-in" data-animate>
+                                    <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
+                                    <a href="#contact" class="btn btn-light btn-lg js-calendly-link">Book Consultation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-lg-6 hero-visual" data-animate>
-                <div class="spline-container" id="heroVisual">
-                    <div class="visual-decoration" aria-hidden="true">
-                        <div class="deco-ring ring-1"></div>
-                        <div class="deco-ring ring-2"></div>
-                        <div class="deco-dot dot-1"></div>
-                        <div class="deco-dot dot-2"></div>
-                        <div class="deco-dot dot-3"></div>
-                    </div>
-                    <div class="dashboard-model">
-                        <div class="model-topline">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="model-header">
-                            <p>Operations Control</p>
-                            <strong>Live CRM + KPI View</strong>
-                        </div>
-                        <div class="model-grid">
-                            <article>
-                                <span>Pipeline</span>
-                                <strong>EUR 1.8M</strong>
-                                <small>+18% this quarter</small>
-                            </article>
-                            <article>
-                                <span>Open Tasks</span>
-                                <strong>126</strong>
-                                <small>32 automated today</small>
-                            </article>
-                            <article class="model-chart">
-                                <span>Decision Signals</span>
-                                <div class="bars" aria-hidden="true">
-                                    <i style="height: 38%"></i>
-                                    <i style="height: 64%"></i>
-                                    <i style="height: 48%"></i>
-                                    <i style="height: 82%"></i>
-                                    <i style="height: 72%"></i>
+            <!-- Slide 2: Data Intelligence -->
+            <div class="carousel-item">
+                <div class="hero-slide-bg" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="hero-slide-content text-white">
+                    <div class="container">
+                        <div class="row align-items-center min-vh-75">
+                            <div class="col-lg-10 offset-lg-1 text-center">
+                                <div class="hero-badge">
+                                    <span class="badge-dot"></span>
+                                    <span>Decision Intelligence</span>
                                 </div>
-                            </article>
-                            <article>
-                                <span>Response Time</span>
-                                <strong>24h</strong>
-                                <small>consultation follow-up</small>
-                            </article>
+                                <h1 class="hero-title">
+                                    Turn Business Data into<br>
+                                    <span>Clear Decisions.</span>
+                                </h1>
+                                <p class="hero-subtitle mx-auto" style="max-width: 800px; color: rgba(255,255,255,0.9);">
+                                    We build executive dashboards that make KPIs, trends, risks, and team performance easier to monitor from one reliable place.
+                                </p>
+                                <div class="hero-buttons">
+                                    <a href="#services" class="btn btn-primary btn-lg">View Dashboards</a>
+                                    <a href="#contact" class="btn btn-light btn-lg">Discuss Project</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="model-footer">
-                            <span>CRM</span>
-                            <span>Dashboards</span>
-                            <span>Automation</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3: Automation -->
+            <div class="carousel-item">
+                <div class="hero-slide-bg" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="hero-slide-content text-white">
+                    <div class="container">
+                        <div class="row align-items-center min-vh-75">
+                            <div class="col-lg-10 offset-lg-1 text-center">
+                                <div class="hero-badge">
+                                    <span class="badge-dot"></span>
+                                    <span>Workflow Automation</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    Replace Repetitive Work with<br>
+                                    <span>Smarter Workflows.</span>
+                                </h1>
+                                <p class="hero-subtitle mx-auto" style="max-width: 800px; color: rgba(255,255,255,0.9);">
+                                    We connect forms, approvals, follow-ups, alerts, and reports so your team can move faster with fewer handoffs.
+                                </p>
+                                <div class="hero-buttons">
+                                    <a href="#services" class="btn btn-primary btn-lg">See Automation</a>
+                                    <a href="#contact" class="btn btn-light btn-lg">Start Planning</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
-        <span class="mouse"><span class="wheel"></span></span>
-        <span>Scroll to explore</span>
-    </a>
 </section>
 
-<section id="about" class="about-section section-padding">
+<section id="about" class="about-section section">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <span class="section-label" data-animate>Who We Are</span>
-                <h2 class="section-title" data-animate>A focused technology partner for practical business transformation.</h2>
+            <div class="col-lg-10 text-center">
+                <span class="eyebrow fade-in" data-animate>Our Approach</span>
+                <h2 class="section-title fade-in" data-animate>Digital systems designed around how your business actually works.</h2>
+                <p class="section-subtitle mx-auto fade-in" data-animate style="max-width: 800px;">
+                    We help teams replace scattered tools and manual tracking with structured CRM, reporting, and automation platforms that are easier to manage and scale.
+                </p>
             </div>
         </div>
 
         <div class="row align-items-center mt-5 g-5">
-            <div class="col-lg-6" data-animate>
+            <div class="col-lg-6 fade-in" data-animate>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=650&fit=crop" alt="Technology team reviewing a digital product">
-                    <div class="about-image-badge">
-                        <span class="badge-number">10+</span>
-                        <span>client engagements supported</span>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=650&fit=crop" alt="Strategic technology consulting" style="border-radius: 24px; box-shadow: var(--color-shadow);">
                 </div>
             </div>
-            <div class="col-lg-6" data-animate>
+            <div class="col-lg-6 fade-in" data-animate>
                 <div class="about-content">
-                    <p class="section-label">About Eagle Group</p>
-                    <h3>We turn scattered workflows into clear, reliable digital systems.</h3>
-                    <p>Our work centers on CRM, dashboards, automation, data visibility, and cloud platforms. Each engagement starts with the operational problem: what is slowing the team down, what leaders cannot see, and what needs to run with less manual effort.</p>
-                    <p>The result is software that supports daily adoption, management control, and future growth instead of becoming another disconnected tool.</p>
-                    <div class="stats-grid">
-                        <article class="stat-card">
-                            <strong>CRM</strong>
-                            <span>workflow design</span>
-                        </article>
-                        <article class="stat-card">
-                            <strong>KPI</strong>
-                            <span>dashboard delivery</span>
-                        </article>
-                        <article class="stat-card">
-                            <strong>AI</strong>
-                            <span>process automation</span>
-                        </article>
-                        <article class="stat-card">
-                            <strong>Cloud</strong>
-                            <span>production readiness</span>
-                        </article>
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Reliable software for controlled growth.</h3>
+                    <p>We begin by understanding your workflow, data sources, users, and decision points. Then we design a system that improves visibility, reduces errors, and supports daily adoption.</p>
+                    <p>The outcome is a dependable platform that helps your team work with better structure while giving leadership clearer operational insight.</p>
+                    <div class="row mt-4 g-3">
+                        <div class="col-6">
+                            <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem;">
+                                <strong style="display: block; color: var(--color-ink); font-size: 1.25rem;">CRM</strong>
+                                <span style="font-size: 0.9rem;">Pipeline Control</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem;">
+                                <strong style="display: block; color: var(--color-ink); font-size: 1.25rem;">Data</strong>
+                                <span style="font-size: 0.9rem;">KPI Reporting</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem;">
+                                <strong style="display: block; color: var(--color-ink); font-size: 1.25rem;">Auto</strong>
+                                <span style="font-size: 0.9rem;">Workflow Automation</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem;">
+                                <strong style="display: block; color: var(--color-ink); font-size: 1.25rem;">Cloud</strong>
+                                <span style="font-size: 0.9rem;">Managed Hosting</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,94 +160,65 @@
     </div>
 </section>
 
-<section id="services" class="services-section section-padding">
-    <div class="services-pattern" aria-hidden="true"></div>
+<section id="services" class="services-section section" style="background: #f9fafb;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <span class="section-label" data-animate>Our Expertise</span>
-                <h2 class="section-title" data-animate>What We Build</h2>
-                <p class="section-subtitle" data-animate>Comprehensive digital solutions designed to give teams cleaner systems, stronger reporting, and faster decisions.</p>
+            <div class="col-lg-10 text-center">
+                <span class="eyebrow fade-in" data-animate>Capabilities</span>
+                <h2 class="section-title fade-in" data-animate>Focused services for modern operations.</h2>
+                <p class="section-subtitle mx-auto fade-in" data-animate style="max-width: 800px;">
+                    Practical engineering, analytics, and automation services built for teams that need dependable systems, not disconnected experiments.
+                </p>
             </div>
         </div>
 
         <div class="row mt-5 g-4">
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-diagram-project" aria-hidden="true"></i></div>
-                    <h3>CRM And Workflow Systems</h3>
-                    <p>Custom CRM flows, customer records, permissions, approval chains, and team workspaces aligned to real operations.</p>
-                    <a href="#contact" class="service-hover">Discuss CRM <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <div class="col-lg-4 col-md-6 fade-in" data-animate>
+                <article class="service-card" style="padding: 3rem; background: #ffffff; border: 1px solid var(--color-border); border-radius: 24px; transition: transform 0.3s ease;">
+                    <h3 style="margin-bottom: 1rem;">CRM and Customer Portals</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Lead tracking, customer records, task ownership, follow-ups, and secure client access designed around your process.</p>
+                    <a href="#contact" style="color: var(--color-primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Plan CRM <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                 </article>
             </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-                    <h3>Executive Dashboards</h3>
-                    <p>Board-ready KPI dashboards, operational monitoring, drill-down reporting, and consistent metric definitions.</p>
-                    <a href="#contact" class="service-hover">Plan a Dashboard <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <div class="col-lg-4 col-md-6 fade-in" data-animate>
+                <article class="service-card" style="padding: 3rem; background: #ffffff; border: 1px solid var(--color-border); border-radius: 24px; transition: transform 0.3s ease;">
+                    <h3 style="margin-bottom: 1rem;">Dashboards and BI</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Executive dashboards and operational reports that make performance, exceptions, and trends easy to understand.</p>
+                    <a href="#contact" style="color: var(--color-primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Build Dashboard <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                 </article>
             </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></div>
-                    <h3>AI Automation</h3>
-                    <p>Lead routing, reporting workflows, document handling, internal approvals, and AI-assisted operational processes.</p>
-                    <a href="#contact" class="service-hover">Automate Work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></div>
-                    <h3>Cloud Platforms</h3>
-                    <p>Secure hosting, release workflows, monitoring, backups, and cloud foundations for production business systems.</p>
-                    <a href="#contact" class="service-hover">Review Cloud <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-window-restore" aria-hidden="true"></i></div>
-                    <h3>Web Applications</h3>
-                    <p>Internal tools, client portals, admin panels, data products, and modern web experiences that are built to last.</p>
-                    <a href="#contact" class="service-hover">Scope an App <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="service-card h-100">
-                    <div class="service-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
-                    <h3>Data Engineering</h3>
-                    <p>Data pipelines, reporting models, integrations, data cleanup, and reliable foundations for analytics and ML work.</p>
-                    <a href="#contact" class="service-hover">Organize Data <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <div class="col-lg-4 col-md-6 fade-in" data-animate>
+                <article class="service-card" style="padding: 3rem; background: #ffffff; border: 1px solid var(--color-border); border-radius: 24px; transition: transform 0.3s ease;">
+                    <h3 style="margin-bottom: 1rem;">AI Workflow Automation</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Smart workflows for approvals, reminders, notifications, reports, and repetitive tasks that slow your team down.</p>
+                    <a href="#contact" style="color: var(--color-primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Automate Work <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                 </article>
             </div>
         </div>
     </div>
 </section>
 
-<section id="products" class="section-padding products-section">
+<section id="products" class="section products-section">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <span class="section-label" data-animate>Productized Platforms</span>
-                <h2 class="section-title" data-animate>Reusable foundations for faster project delivery.</h2>
-                <p class="section-subtitle" data-animate>These platform areas show how Eagle Group packages engineering, analytics, and automation capability into clearer business offerings.</p>
+            <div class="col-lg-10 text-center">
+                <span class="eyebrow fade-in" data-animate>Platforms</span>
+                <h2 class="section-title fade-in" data-animate>Ready foundations for faster delivery.</h2>
+                <p class="section-subtitle mx-auto fade-in" data-animate style="max-width: 800px;">
+                    Our platform foundations reduce build time while keeping each implementation tailored to your workflow, data, and reporting needs.
+                </p>
             </div>
         </div>
         <div id="featuredProductsGrid" class="row mt-5 g-4">
             {% for product in featured_products[:3] %}
             <div class="col-lg-4 col-md-6 fade-in">
-                <article class="product-card h-100">
-                    <img src="{{ product.hero_image }}" class="card-img-top" alt="{{ product.title }}">
-                    <div class="card-body">
-                        <p class="product-category">{{ product.category }}</p>
-                        <h3 class="card-title">{{ product.title }}</h3>
-                        <p class="card-text">{{ product.summary }}</p>
-                        <ul class="product-outcomes">
-                            {% for outcome in product.outcomes[:2] %}
-                            <li>{{ outcome }}</li>
-                            {% endfor %}
-                        </ul>
-                        <a class="card-link" href="{{ url_for('product_detail', slug=product.slug) }}">View Solution <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <article class="product-card h-100" style="border-radius: 24px; overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--color-shadow);">
+                    <img src="{{ product.hero_image }}" class="card-img-top" alt="{{ product.title }}" style="height: 200px; object-fit: cover;">
+                    <div class="card-body" style="padding: 2rem;">
+                        <p class="product-category" style="font-size: 0.75rem; color: var(--color-primary); font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">{{ product.category }}</p>
+                        <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1rem;">{{ product.title }}</h3>
+                        <p class="card-text" style="font-size: 0.9rem; color: var(--color-muted); line-height: 1.5;">{{ product.summary }}</p>
+                        <a class="card-link" href="{{ url_for('product_detail', slug=product.slug) }}" style="display: inline-block; margin-top: 1.5rem; font-weight: 700; color: var(--color-primary);">Explore Solution <i class="fas fa-arrow-right" style="margin-left: 0.3rem;"></i></a>
                     </div>
                 </article>
             </div>
@@ -243,320 +227,293 @@
     </div>
 </section>
 
-<section id="pricing" class="pricing-section section-padding">
+<section id="tools" class="tools-section section">
+    <div class="container">
+        <div class="row align-items-end justify-content-between g-4">
+            <div class="col-lg-7">
+                <span class="eyebrow fade-in" data-animate>Live Tools</span>
+                <h2 class="section-title fade-in" data-animate style="text-align: left; margin-left: 0;">A live command center for the products we build.</h2>
+                <p class="section-subtitle fade-in" data-animate style="text-align: left; margin-left: 0; max-width: 720px;">
+                    Explore active dashboards, business portals, e-commerce platforms, and AI workspaces that show how our systems perform in real use.
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <div class="tools-note fade-in" data-animate>
+                    <span>Click any preview</span>
+                    <p>Each card opens the live tool in a new tab for direct exploration.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tools-grid mt-5">
+            <a class="tool-card tool-card-featured fade-in" data-animate href="https://pvschool.pythonanywhere.com" target="_blank" rel="noopener noreferrer" aria-label="Open PV School portal">
+                <div class="tool-preview">
+                    <div class="browser-bar"><span></span><span></span><span></span></div>
+                    <img src="{{ url_for('static', filename='images/tools/pvschool.png') }}" alt="PV School portal preview">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-type">Education Portal</span>
+                    <h3>PV School Digital Portal</h3>
+                    <p>A polished school website for presenting academic information, admissions, events, and parent-facing communication in one structured experience.</p>
+                    <div class="tool-action">Open Live Tool <i class="fas fa-arrow-up-right-from-square"></i></div>
+                </div>
+            </a>
+
+            <a class="tool-card fade-in" data-animate href="https://lakshmi-jewelery2.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open Lakshmi Jewellery storefront">
+                <div class="tool-preview">
+                    <div class="browser-bar"><span></span><span></span><span></span></div>
+                    <img src="{{ url_for('static', filename='images/tools/lakshmi-jewelery.png') }}" alt="Lakshmi Jewellery storefront preview">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-type">Retail Storefront</span>
+                    <h3>Lakshmi Jewellery</h3>
+                    <p>A modern jewellery storefront focused on product presentation, browsing, and premium brand experience.</p>
+                    <div class="tool-action">Open Live Tool <i class="fas fa-arrow-up-right-from-square"></i></div>
+                </div>
+            </a>
+
+            <a class="tool-card fade-in" data-animate href="https://tn-election.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open TN Election dashboard">
+                <div class="tool-preview">
+                    <div class="browser-bar"><span></span><span></span><span></span></div>
+                    <img src="{{ url_for('static', filename='images/tools/tn-election.png') }}" alt="TN Election survey dashboard preview">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-type">Survey Dashboard</span>
+                    <h3>TN Election Insights</h3>
+                    <p>A Tamil election feedback and voter survey interface for collecting citizen priorities and constituency-level signals.</p>
+                    <div class="tool-action">Open Live Tool <i class="fas fa-arrow-up-right-from-square"></i></div>
+                </div>
+            </a>
+
+            <a class="tool-card fade-in" data-animate href="https://aayushayurvedic.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Aayush Ayurvedic store">
+                <div class="tool-preview">
+                    <div class="browser-bar"><span></span><span></span><span></span></div>
+                    <img src="{{ url_for('static', filename='images/tools/aayush-ayurvedic.png') }}" alt="Aayush Ayurvedic store preview">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-type">Commerce Platform</span>
+                    <h3>Aayus Naturals Store</h3>
+                    <p>An Ayurvedic and devotional e-commerce experience with categories, cart flow, product discovery, and customer support touchpoints.</p>
+                    <div class="tool-action">Open Live Tool <i class="fas fa-arrow-up-right-from-square"></i></div>
+                </div>
+            </a>
+
+            <a class="tool-card fade-in" data-animate href="https://eaglebusinessai.eu.pythonanywhere.com" target="_blank" rel="noopener noreferrer" aria-label="Open Eagle Business AI">
+                <div class="tool-preview">
+                    <div class="browser-bar"><span></span><span></span><span></span></div>
+                    <img src="{{ url_for('static', filename='images/tools/eagle-business-ai.png') }}" alt="Eagle Business AI preview">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-type">AI Workspace</span>
+                    <h3>Eagle Business AI</h3>
+                    <p>A secure AI-enabled business workspace for internal intelligence, workflow support, and protected operational access.</p>
+                    <div class="tool-action">Open Live Tool <i class="fas fa-arrow-up-right-from-square"></i></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" class="pricing-section section" style="background: #f9fafb;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <span class="section-label" data-animate>Prices</span>
-                <h2 class="section-title" data-animate>Services And Starting Prices</h2>
-                <p class="section-subtitle" data-animate>Professional packages for websites, CRM systems, and intelligent applications. Final scope is confirmed after a short project discussion.</p>
+            <div class="col-lg-10 text-center">
+                <span class="eyebrow fade-in" data-animate>Pricing</span>
+                <h2 class="section-title fade-in" data-animate>Transparent packages for professional delivery.</h2>
+                <p class="section-subtitle mx-auto fade-in" data-animate style="max-width: 800px;">
+                    Clear starting prices for websites, CRM systems, and intelligent applications. Every package includes maintenance support and launch assistance.
+                </p>
             </div>
         </div>
 
         <div class="row mt-5 g-4 align-items-stretch">
             <div class="col-lg-3 col-md-6" data-animate>
-                <article class="pricing-card h-100">
+                <article class="pricing-card h-100" style="background: #ffffff; padding: 2.5rem; border-radius: 24px; border: 1px solid var(--color-border);">
                     <div class="pricing-header">
-                        <span class="pricing-type">Website</span>
-                        <h3>Basic Website</h3>
-                        <p class="price">INR 5,000 <span>starting from</span></p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Basic Website</h3>
+                        <p class="price" style="font-size: 1.5rem; font-weight: 800; color: var(--color-ink);">INR 5,000 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-muted);">starts from</span></p>
                     </div>
-                    <ul class="pricing-features">
-                        <li>Responsive business website</li>
-                        <li>Essential pages and contact form</li>
-                        <li>Basic SEO setup</li>
-                        <li>Includes 1 year maintenance</li>
-                        <li>Live support and assistance</li>
+                    <ul class="pricing-features" style="list-style: none; padding: 0; margin: 1.5rem 0; font-size: 0.9rem; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Responsive business website</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Contact and inquiry forms</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Essential SEO setup</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> 1 year maintenance included</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Live support and assistance</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                    <a href="#contact" class="btn btn-outline-dark w-100" style="border-radius: 12px;">Get Started</a>
                 </article>
             </div>
             <div class="col-lg-3 col-md-6" data-animate>
-                <article class="pricing-card h-100">
+                <article class="pricing-card h-100" style="background: #ffffff; padding: 2.5rem; border-radius: 24px; border: 1px solid var(--color-border);">
                     <div class="pricing-header">
-                        <span class="pricing-type">Website</span>
-                        <h3>Professional Website</h3>
-                        <p class="price">INR 8,999 <span>starting from</span></p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Professional Website</h3>
+                        <p class="price" style="font-size: 1.5rem; font-weight: 800; color: var(--color-ink);">INR 8,999 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-muted);">starts from</span></p>
                     </div>
-                    <ul class="pricing-features">
-                        <li>Premium responsive website</li>
-                        <li>Professional UI/UX sections</li>
-                        <li>Lead-focused forms and integrations</li>
-                        <li>Includes 1 year maintenance</li>
-                        <li>Live support and assistance</li>
+                    <ul class="pricing-features" style="list-style: none; padding: 0; margin: 1.5rem 0; font-size: 0.9rem; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Professional UI/UX structure</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Lead conversion sections</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Forms and basic integrations</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> 1 year maintenance included</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Live support and assistance</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                    <a href="#contact" class="btn btn-outline-dark w-100" style="border-radius: 12px;">Get Started</a>
                 </article>
             </div>
             <div class="col-lg-3 col-md-6" data-animate>
-                <article class="pricing-card popular h-100">
-                    <div class="popular-badge">Popular</div>
+                <article class="pricing-card popular h-100" style="background: #ffffff; padding: 2.5rem; border-radius: 24px; border: 2px solid var(--color-primary); position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-primary); color: #ffffff; padding: 0.2rem 1rem; border-radius: 999px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">Top Choice</div>
                     <div class="pricing-header">
-                        <span class="pricing-type">CRM</span>
-                        <h3>CRM System</h3>
-                        <p class="price">INR 12,000 <span>starting from</span></p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">CRM System</h3>
+                        <p class="price" style="font-size: 1.5rem; font-weight: 800; color: var(--color-ink);">INR 12,000 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-muted);">starts from</span></p>
                     </div>
-                    <ul class="pricing-features">
-                        <li>Lead and customer management</li>
-                        <li>Workflow and follow-up tracking</li>
-                        <li>Dashboard reporting</li>
-                        <li>Includes 1 year maintenance</li>
-                        <li>Live support and assistance</li>
+                    <ul class="pricing-features" style="list-style: none; padding: 0; margin: 1.5rem 0; font-size: 0.9rem; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Lead and customer management</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Follow-up and task tracking</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Reporting dashboard</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> 1 year maintenance included</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Live support and assistance</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary w-100">Get Started</a>
+                    <a href="#contact" class="btn btn-primary w-100" style="border-radius: 12px;">Get Started</a>
                 </article>
             </div>
             <div class="col-lg-3 col-md-6" data-animate>
-                <article class="pricing-card h-100">
+                <article class="pricing-card h-100" style="background: #ffffff; padding: 2.5rem; border-radius: 24px; border: 1px solid var(--color-border);">
                     <div class="pricing-header">
-                        <span class="pricing-type">AI App</span>
-                        <h3>AI And Intelligent App</h3>
-                        <p class="price">INR 25,000 <span>starting from</span></p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">AI and Intelligent App</h3>
+                        <p class="price" style="font-size: 1.5rem; font-weight: 800; color: var(--color-ink);">INR 25,000 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-muted);">starts from</span></p>
                     </div>
-                    <ul class="pricing-features">
-                        <li>AI-assisted workflow features</li>
-                        <li>Intelligent app logic</li>
-                        <li>Automation and data handling</li>
-                        <li>Includes 1 year maintenance</li>
-                        <li>Live support and assistance</li>
+                    <ul class="pricing-features" style="list-style: none; padding: 0; margin: 1.5rem 0; font-size: 0.9rem; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> AI-assisted workflow features</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Intelligent app logic</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Automation and data handling</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> 1 year maintenance included</li>
+                        <li><i class="fas fa-check" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Live support and assistance</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline w-100">Get Started</a>
+                    <a href="#contact" class="btn btn-outline-dark w-100" style="border-radius: 12px;">Get Started</a>
                 </article>
             </div>
-        </div>
-
-        <div class="additional-services" data-animate>
-            <span>Included with every package:</span>
-            <p>1 year maintenance, live support, launch assistance, and practical guidance after delivery.</p>
         </div>
     </div>
 </section>
 
-<section id="process" class="process-section section-padding">
+<section id="process" class="process-section section">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <span class="section-label" data-animate>Our Approach</span>
-                <h2 class="section-title" data-animate>How We Work</h2>
-                <p class="section-subtitle" data-animate>A streamlined process designed to reduce ambiguity and keep delivery tied to the business outcome.</p>
+            <div class="col-lg-10 text-center">
+                <span class="eyebrow fade-in" data-animate>Process</span>
+                <h2 class="section-title fade-in" data-animate>From Vision to Launch, Built With Precision.</h2>
+                <p class="section-subtitle mx-auto fade-in" data-animate style="max-width: 800px;">
+                    A clear delivery path that moves from discovery to launch with practical planning, visible progress, and dependable support.
+                </p>
             </div>
         </div>
 
         <div class="row mt-5 g-4">
-            <div class="col-lg-3 col-md-6" data-animate>
-                <article class="process-step">
-                    <div class="step-number">01</div>
-                    <div class="step-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+            <div class="col-lg-3 col-md-6 fade-in" data-animate>
+                <article class="process-step text-center">
+                    <div class="process-number process-number-1">01</div>
                     <h3>Discover</h3>
-                    <p>We understand your workflow, users, data sources, goals, and operating constraints.</p>
+                    <p style="font-size: 0.9rem;">We map your goals, users, workflows, and current operational challenges.</p>
                 </article>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate>
-                <article class="process-step">
-                    <div class="step-number">02</div>
-                    <div class="step-icon"><i class="fas fa-pencil-ruler" aria-hidden="true"></i></div>
-                    <h3>Design</h3>
-                    <p>We shape the architecture, screens, data flow, and delivery plan before build starts.</p>
+            <div class="col-lg-3 col-md-6 fade-in" data-animate>
+                <article class="process-step text-center">
+                    <div class="process-number process-number-2">02</div>
+                    <h3>Plan</h3>
+                    <p style="font-size: 0.9rem;">We define the structure, screens, data flow, and delivery priorities.</p>
                 </article>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate>
-                <article class="process-step">
-                    <div class="step-number">03</div>
-                    <div class="step-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
-                    <h3>Develop</h3>
-                    <p>We build, integrate, test, and review each workflow with the people who will use it.</p>
+            <div class="col-lg-3 col-md-6 fade-in" data-animate>
+                <article class="process-step text-center">
+                    <div class="process-number process-number-3">03</div>
+                    <h3>Build</h3>
+                    <p style="font-size: 0.9rem;">We build the solution in focused stages and keep progress visible.</p>
                 </article>
             </div>
-            <div class="col-lg-3 col-md-6" data-animate>
-                <article class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
-                    <h3>Launch & Support</h3>
-                    <p>We deploy, monitor, document, and support the product after launch.</p>
+            <div class="col-lg-3 col-md-6 fade-in" data-animate>
+                <article class="process-step text-center">
+                    <div class="process-number process-number-4">04</div>
+                    <h3>Launch</h3>
+                    <p style="font-size: 0.9rem;">We launch, verify, hand over, and continue supporting the system.</p>
                 </article>
             </div>
         </div>
     </div>
 </section>
 
-<section id="why" class="why-section section-padding">
+<section id="why" class="why-section section" style="background: #ffffff;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <span class="section-label" data-animate>Our Difference</span>
-                <h2 class="section-title" data-animate>Why Teams Choose Eagle Group</h2>
+            <div class="col-lg-10 text-center">
+                <span class="eyebrow fade-in" data-animate>Why Eagle</span>
+                <h2 class="section-title fade-in" data-animate>Built for reliability, clarity, and long-term value.</h2>
             </div>
         </div>
 
         <div class="row mt-5 g-4">
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="why-card">
-                    <div class="why-icon"><i class="fas fa-fingerprint" aria-hidden="true"></i></div>
-                    <h3>Custom Operating Fit</h3>
-                    <p>Every system is shaped around your process, users, governance, and reporting requirements.</p>
+            <div class="col-lg-4 col-md-6 fade-in" data-animate>
+                <article class="why-card" style="padding: 2.5rem; border: 1px solid var(--color-border); border-radius: 24px;">
+                    <h3 style="margin-bottom: 1rem;">Quality Engineering</h3>
+                    <p style="font-size: 0.95rem;">We build clean, maintainable systems with practical architecture, secure foundations, and room to scale.</p>
                 </article>
             </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="why-card">
-                    <div class="why-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
-                    <h3>Clarity-First Interfaces</h3>
-                    <p>We make complex workflow and data decisions easier to scan, understand, and act on.</p>
+            <div class="col-lg-4 col-md-6 fade-in" data-animate>
+                <article class="why-card" style="padding: 2.5rem; border: 1px solid var(--color-border); border-radius: 24px;">
+                    <h3 style="margin-bottom: 1rem;">Outcome-Led Delivery</h3>
+                    <p style="font-size: 0.95rem;">Every feature is tied to a business goal: better tracking, faster decisions, less manual work, or stronger visibility.</p>
                 </article>
             </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="why-card">
-                    <div class="why-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
-                    <h3>Secure Foundations</h3>
-                    <p>Architecture, permissions, backups, and deployment practices are considered from the start.</p>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="why-card">
-                    <div class="why-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
-                    <h3>Transparent Delivery</h3>
-                    <p>You get clear scope, practical milestones, and delivery conversations grounded in outcomes.</p>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="why-card">
-                    <div class="why-icon"><i class="fas fa-cubes" aria-hidden="true"></i></div>
-                    <h3>Brand And Tech Alignment</h3>
-                    <p>Visual design, workflow design, data structure, and engineering stay connected in one delivery track.</p>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-6" data-animate>
-                <article class="why-card">
-                    <div class="why-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
-                    <h3>Post-Launch Support</h3>
-                    <p>We help teams adopt, improve, and maintain the system after the first release is live.</p>
+            <div class="col-lg-4 col-md-6 fade-in" data-animate>
+                <article class="why-card" style="padding: 2.5rem; border: 1px solid var(--color-border); border-radius: 24px;">
+                    <h3 style="margin-bottom: 1rem;">Long-Term Support</h3>
+                    <p style="font-size: 0.95rem;">We support the system after launch so your team can adopt it confidently and improve it over time.</p>
                 </article>
             </div>
         </div>
     </div>
 </section>
 
-<section class="highlight-band">
+<section id="contact" class="contact-section section" style="background: #0c1424; color: #ffffff; border-radius: 48px; margin: 0 1rem 2rem;">
     <div class="container">
-        <div class="highlight-content" data-animate>
-            <p>"Eagle Group helps SME teams replace spreadsheet-heavy operations with clear CRM systems, reliable dashboards, and automation that can scale."</p>
-            <div class="highlight-cities">
-                <span>Europe</span>
-                <span class="dot">&middot;</span>
-                <span>India</span>
-                <span class="dot">&middot;</span>
-                <span>Remote Delivery</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact-section section-padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <span class="section-label" data-animate>Get In Touch</span>
-                <h2 class="section-title" data-animate>Let's Build Your Next Digital System</h2>
-            </div>
-        </div>
-
-        <div class="row mt-5 g-4">
-            <div class="col-lg-5" data-animate>
-                <aside class="contact-info">
-                    <p class="contact-intro">Tell us what you want to improve, automate, or launch. We will help turn the idea into a clear, operations-ready digital product.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
-                            <div class="contact-text">
-                                <span>Phone / WhatsApp</span>
-                                <a class="js-whatsapp-link" href="#contact">+91 87785 84642</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
-                            <div class="contact-text">
-                                <span>Consultation</span>
-                                <a class="js-calendly-link" href="#contact">Book a free call</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
-                            <div class="contact-text">
-                                <span>Delivery</span>
-                                <strong>Europe, India and remote clients</strong>
-                            </div>
-                        </div>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 fade-in" data-animate>
+                <span class="eyebrow" style="color: #ffffff;">Contact Us</span>
+                <h2 class="section-title" style="color: #ffffff; text-align: left; margin-left: 0;">Let's design your next<br>digital system.</h2>
+                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem;">Tell us what you want to improve, automate, or launch. We will respond with a practical next step.</p>
+                <div class="contact-item d-flex align-items-center mb-4">
+                    <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;"><i class="fab fa-whatsapp"></i></div>
+                    <div>
+                        <span style="display: block; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">Direct Inquiry</span>
+                        <a class="js-whatsapp-link" href="#" style="font-weight: 700;">+91 87785 84642</a>
                     </div>
-                </aside>
+                </div>
+                <div class="contact-item d-flex align-items-center">
+                    <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;"><i class="fas fa-calendar-alt"></i></div>
+                    <div>
+                        <span style="display: block; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">Consultation</span>
+                        <a class="js-calendly-link" href="#" style="font-weight: 700;">Schedule a Call</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-lg-7" data-animate>
-                <div class="contact-form-wrapper">
-                    {% with messages = get_flashed_messages(with_categories=true) %}
-                        {% if messages %}
-                            {% for category, message in messages %}
-                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                                {{ message }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                    <div id="contactFormStatus" class="d-none" role="status" aria-live="polite"></div>
-                    <form method="POST" action="{{ url_for('index') }}#contact" class="contact-form" data-api-url="{{ contact_api_url }}">
-                        <div class="row g-3">
+            <div class="col-lg-7 fade-in" data-animate>
+                <div style="background: #ffffff; padding: 3rem; border-radius: 32px; color: var(--color-ink);">
+                    <form method="POST" action="{{ url_for('index') }}#contact" class="contact-form">
+                        <div class="row g-4">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Your Name <span>*</span></label>
-                                    <input id="name" class="form-control" type="text" name="name" placeholder="Your name" required>
-                                </div>
+                                <label class="form-label">Full Name</label>
+                                <input type="text" name="name" class="form-control" required placeholder="Your name">
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="business">Business / Brand name</label>
-                                    <input id="business" class="form-control" type="text" name="business" placeholder="Company name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="email">Email Address <span>*</span></label>
-                                    <input id="email" class="form-control" type="email" name="email" placeholder="you@example.com" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="phone">Phone / WhatsApp</label>
-                                    <input id="phone" class="form-control" type="tel" name="phone" placeholder="+91 98765 43210">
-                                </div>
+                                <label class="form-label">Email Address</label>
+                                <input type="email" name="email" class="form-control" required placeholder="you@company.com">
                             </div>
                             <div class="col-12">
-                                <div class="form-group">
-                                    <label for="projectType">Project</label>
-                                    <select id="projectType" class="form-control form-select" name="project_type">
-                                        <option value="" selected>Select a service</option>
-                                        <option value="CRM system">CRM system</option>
-                                        <option value="Dashboard">Dashboard</option>
-                                        <option value="Automation">Automation</option>
-                                        <option value="Web application">Web application</option>
-                                        <option value="Cloud or data work">Cloud or data work</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
+                                <label class="form-label">Message</label>
+                                <textarea name="message" class="form-control" rows="4" placeholder="Tell us about the website, CRM, dashboard, or app you want to build."></textarea>
                             </div>
                             <div class="col-12">
-                                <div class="form-group">
-                                    <label for="message">Message / Requirements</label>
-                                    <textarea id="message" class="form-control" name="message" rows="4" placeholder="Tell us about the workflow, dashboard, or system you want to build."></textarea>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <input class="hidden" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
-                                <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" value="yes" id="privacyConsent" required>
-                                    <label class="form-check-label" for="privacyConsent">
-                                        I consent to Eagle Group storing this submission to respond to my inquiry.
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-submit"><span>Send Inquiry</span><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Send Inquiry</button>
                             </div>
                         </div>
                     </form>

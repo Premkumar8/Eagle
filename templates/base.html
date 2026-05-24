@@ -9,17 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     {% block extra_head %}{% endblock %}
 </head>
 <body data-root-path="{{ url_for('index') }}">
     <div id="preloader" aria-hidden="true">
         <div class="preloader-mark">
-            <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo-transparent.png') }}" alt="">
-            <span></span>
+            <div class="loader-orbit">
+                <span class="loader-core"></span>
+                <span class="loader-node node-a"></span>
+                <span class="loader-node node-b"></span>
+                <span class="loader-node node-c"></span>
+            </div>
+            <div class="loader-scan"></div>
         </div>
-        <p>Preparing your digital workspace</p>
+        <p>Preparing your workspace</p>
     </div>
 
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
@@ -30,7 +35,7 @@
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
             <div class="container">
                 <a class="navbar-brand" href="{{ url_for('index') }}#hero" aria-label="Eagle Group home">
-                    <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo.png') }}" alt="Eagle Group of IT Solution logo">
+                    <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo-transparent.png') }}" alt="Eagle Group of IT Solution logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,9 +45,9 @@
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#products">Platforms</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#tools">Tools</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#pricing">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#process">Process</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#why">Why Eagle</a></li>
                         <li class="nav-item nav-cta">
                             <a class="btn btn-primary btn-nav js-calendly-link" href="{{ url_for('index') }}#contact">
                                 <span>Book a Call</span>
@@ -61,38 +66,60 @@
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-main">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-4 col-md-6">
-                        <a class="footer-logo" href="{{ url_for('index') }}#hero">
-                            <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo-transparent.png') }}" alt="Eagle Group of IT Solution logo">
-                        </a>
-                        <p class="footer-tagline">Digital Systems Studio</p>
-                        <p class="footer-motto">Code &middot; Clarity &middot; Control</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <nav class="footer-nav" aria-label="Footer navigation">
-                            <a href="{{ url_for('index') }}#about">About</a>
-                            <a href="{{ url_for('index') }}#services">Services</a>
-                            <a href="{{ url_for('index') }}#pricing">Pricing</a>
-                            <a href="{{ url_for('index') }}#process">Process</a>
-                            <a href="{{ url_for('index') }}#contact">Contact</a>
-                        </nav>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="footer-social">
-                            <a class="js-whatsapp-link" href="{{ url_for('index') }}#contact" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                            <a class="js-calendly-link" href="{{ url_for('index') }}#contact" aria-label="Book a call"><i class="fas fa-calendar" aria-hidden="true"></i></a>
-                            {% if featured_products %}
-                            <a href="{{ url_for('product_detail', slug=featured_products[0].slug) }}" aria-label="View platforms"><i class="fas fa-cube" aria-hidden="true"></i></a>
-                            {% endif %}
-                            <a href="{{ url_for('index') }}#contact" aria-label="Contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                        </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="footer-brand-clean" href="{{ url_for('index') }}#hero">
+                        <img src="{{ url_for('static', filename='images/eagle-group-of-it-solution-logo-transparent.png') }}" alt="Eagle Group logo">
+                    </a>
+                    <p class="footer-description mt-3">We build modern digital systems CRM, Analytics, and Automation that help organizations run more efficiently and grow faster.</p>
+                    <div class="footer-tagline-motto">Technology of Tomorrow</div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading mb-4">Quick Links</h4>
+                    <nav class="footer-nav">
+                        <a href="{{ url_for('index') }}#about">About Us</a>
+                        <a href="{{ url_for('index') }}#services">Our Services</a>
+                        <a href="{{ url_for('index') }}#products">Platforms</a>
+                        <a href="{{ url_for('index') }}#pricing">Pricing</a>
+                    </nav>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading mb-4">Expertise</h4>
+                    <nav class="footer-nav">
+                        <a href="{{ url_for('index') }}#services">Custom CRM</a>
+                        <a href="{{ url_for('index') }}#services">Business Intelligence</a>
+                        <a href="{{ url_for('index') }}#services">Cloud Solutions</a>
+                        <a href="{{ url_for('index') }}#services">AI & Automation</a>
+                    </nav>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading mb-4">Support</h4>
+                    <nav class="footer-nav">
+                        <a href="{{ url_for('index') }}#contact">Contact Support</a>
+                        <a href="{{ url_for('index') }}#process">Work Process</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </nav>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-heading mb-4">Get in Touch</h4>
+                    <div class="footer-social-vertical">
+                        <a class="js-whatsapp-link" href="#"><i class="fab fa-whatsapp me-2"></i> WhatsApp</a>
+                        <a class="js-calendly-link" href="#"><i class="fas fa-calendar-alt me-2"></i> Book a Call</a>
+                        <a href="mailto:contact@eagleweb.com"><i class="fas fa-envelope me-2"></i> Email Us</a>
+                        <a href="#"><i class="fab fa-linkedin me-2"></i> LinkedIn</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Eagle Group of IT Solution. All rights reserved.</p>
+            <div class="footer-bottom mt-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; <span id="year"></span> Eagle Group of IT Solution. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                        <p class="mb-0" style="font-size: 0.8rem; opacity: 0.6;">High-performance digital engineering</p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

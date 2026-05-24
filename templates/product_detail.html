@@ -4,46 +4,44 @@
 {% block meta_description %}{{ product.summary }}{% endblock %}
 
 {% block content %}
-<section class="detail-hero">
-    <div class="detail-hero-media" style="background-image: linear-gradient(135deg, rgba(7, 15, 43, 0.82), rgba(140, 29, 24, 0.62)), url('{{ product.hero_image }}');"></div>
-    <div class="container detail-hero-content">
-        <p class="eyebrow">{{ product.category }}</p>
-        <h1>{{ product.title }}</h1>
-        <p class="detail-tagline">{{ product.tagline }}</p>
-        <p class="detail-summary">{{ product.description }}</p>
-        <div class="detail-actions">
-            <a href="{{ url_for('index') }}#contact" class="btn btn-primary">Request a Consultation</a>
-            <a href="{{ url_for('index') }}#products" class="btn btn-outline-dark">Back to Featured Products</a>
+<section class="detail-hero section product-detail-hero" style="background-image: linear-gradient(135deg, rgba(5, 11, 24, 0.84), rgba(72, 15, 22, 0.72)), url('{{ product.hero_image }}');">
+    <div class="container detail-hero-content text-center">
+        <span class="eyebrow" style="color: rgba(255, 255, 255, 0.6);">{{ product.category }}</span>
+        <h1 style="color: #ffffff; font-size: clamp(2.5rem, 5vw, 4rem); margin: 1.5rem 0;">{{ product.title }}</h1>
+        <p class="detail-tagline mx-auto" style="max-width: 800px; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8);">{{ product.tagline }}</p>
+        <div class="detail-actions mt-5">
+            <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-lg">Request Consultation</a>
         </div>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <div class="row g-5 align-items-start">
+        <div class="row g-5">
             <div class="col-lg-7 fade-in">
-                <div class="detail-section">
-                    <p class="eyebrow">Why It Matters</p>
-                    <h2>Designed to solve a clear operational problem.</h2>
-                    <p>{{ product.summary }}</p>
-                    <p>{{ product.delivery }}</p>
+                <div class="detail-section mb-5">
+                    <span class="eyebrow">Overview</span>
+                    <h2 style="margin: 1rem 0 1.5rem;">Strategic Operational Impact</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">{{ product.description }}</p>
                 </div>
 
-                <div class="detail-section">
-                    <p class="eyebrow">Core Capabilities</p>
-                    <div class="detail-list-grid">
+                <div class="detail-section mb-5">
+                    <span class="eyebrow">Core Capabilities</span>
+                    <div class="row g-4 mt-2">
                         {% for capability in product.capabilities %}
-                        <article class="detail-card">
-                            <h3>{{ capability.title }}</h3>
-                            <p>{{ capability.description }}</p>
-                        </article>
+                        <div class="col-12">
+                            <article class="detail-card" style="padding: 2rem; border: 1px solid var(--color-border); border-radius: 20px;">
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">{{ capability.title }}</h3>
+                                <p style="font-size: 0.95rem; margin: 0;">{{ capability.description }}</p>
+                            </article>
+                        </div>
                         {% endfor %}
                     </div>
                 </div>
 
                 <div class="detail-section">
-                    <p class="eyebrow">Use Cases</p>
-                    <ul class="check-list">
+                    <span class="eyebrow">Key Use Cases</span>
+                    <ul class="check-list mt-3">
                         {% for use_case in product.use_cases %}
                         <li>{{ use_case }}</li>
                         {% endfor %}
@@ -52,19 +50,15 @@
             </div>
 
             <div class="col-lg-5 fade-in">
-                <div class="detail-sidebar">
-                    <img src="{{ product.detail_image }}" alt="{{ product.title }}" class="detail-image">
-                    <div class="detail-sidebar-panel">
-                        <p class="sidebar-heading">Expected Outcomes</p>
-                        <ul class="compact-list">
+                <div class="detail-sidebar sticky-top" style="top: 120px;">
+                    <img src="{{ product.detail_image or product.hero_image }}" alt="{{ product.title }}" class="detail-image mb-4" style="border-radius: 24px; box-shadow: var(--color-shadow);" onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/App.png') }}';">
+                    <div class="detail-sidebar-panel" style="padding: 2rem; background: #f9fafb; border-radius: 24px;">
+                        <span class="eyebrow" style="font-size: 0.7rem;">Expected Outcomes</span>
+                        <ul class="compact-list mt-3">
                             {% for outcome in product.outcomes %}
                             <li>{{ outcome }}</li>
                             {% endfor %}
                         </ul>
-                    </div>
-                    <div class="detail-sidebar-panel">
-                        <p class="sidebar-heading">Engagement Style</p>
-                        <p>{{ product.delivery }}</p>
                     </div>
                 </div>
             </div>
@@ -72,23 +66,21 @@
     </div>
 </section>
 
-<section class="section section-surface">
+<section class="section" style="background: #f9fafb;">
     <div class="container">
-        <div class="section-intro fade-in">
-            <p class="eyebrow">Related Solutions</p>
-            <h2 class="section-title">Explore adjacent product areas.</h2>
-            <p class="section-subtitle">Many clients combine reporting, workflow, and platform delivery to move from isolated improvements to a stronger operating system.</p>
+        <div class="section-intro text-center mb-5">
+            <span class="eyebrow">Portfolio</span>
+            <h2 class="section-title">Related Solutions</h2>
         </div>
         <div class="row g-4">
             {% for item in related_products %}
             <div class="col-lg-4 fade-in">
-                <article class="product-card h-100">
-                    <img src="{{ item.hero_image }}" class="card-img-top" alt="{{ item.title }}">
-                    <div class="card-body">
-                        <p class="product-category">{{ item.category }}</p>
-                        <h3 class="card-title">{{ item.title }}</h3>
-                        <p class="card-text">{{ item.summary }}</p>
-                        <a class="card-link" href="{{ url_for('product_detail', slug=item.slug) }}">View Solution</a>
+                <article class="product-card h-100" style="background: #ffffff; border-radius: 24px; overflow: hidden; border: 1px solid var(--color-border);">
+                    <img src="{{ item.hero_image }}" class="card-img-top" alt="{{ item.title }}" style="height: 200px; object-fit: cover;">
+                    <div class="card-body" style="padding: 2rem;">
+                        <p class="product-category" style="font-size: 0.75rem; color: var(--color-primary); font-weight: 800; text-transform: uppercase;">{{ item.category }}</p>
+                        <h3 class="card-title" style="font-size: 1.25rem;">{{ item.title }}</h3>
+                        <a class="card-link" href="{{ url_for('product_detail', slug=item.slug) }}" style="display: inline-block; margin-top: 1rem; font-weight: 700; color: var(--color-primary);">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
