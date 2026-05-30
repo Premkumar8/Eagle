@@ -142,7 +142,7 @@ PRODUCTS = [
             "Workflow digitization projects",
             "New service launches and MVPs",
         ],
-        "delivery": "Used as a foundation for bespoke web and mobile projects delivered by Eagle Group teams.",
+        "delivery": "Used as a foundation for bespoke web and mobile projects delivered by Eagle Innovations teams.",
     },
     {
         "slug": "enterprise-systems-manager",

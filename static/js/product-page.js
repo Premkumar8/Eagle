@@ -9,7 +9,7 @@ function renderProductPage() {
         return;
     }
 
-    document.title = `${product.title} | Eagle Group`;
+    document.title = `${product.title} | Eagle Innovations`;
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

@@ -1,6 +1,6 @@
-# Eagle Group IT Solutions Website
+# Eagle Innovations IT Solutions Website
 
-This folder contains a lightweight, responsive web site for **Eagle Group
+This folder contains a lightweight, responsive web site for **Eagle Innovations
 IT Solutions**.  The design draws inspiration from your existing B12
 site while providing a fresh look and a clean codebase that you can host
 and maintain yourself.  The site is built entirely with HTML and CSS and
