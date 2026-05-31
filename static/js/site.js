@@ -356,6 +356,30 @@ function setupExternalCtas() {
             link.setAttribute("rel", "noreferrer");
         });
     }
+
+    if (config.linkedInUrl) {
+        document.querySelectorAll(".js-linkedin-link").forEach((link) => {
+            link.setAttribute("href", config.linkedInUrl);
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noreferrer");
+        });
+    }
+
+    if (config.instagramUrl) {
+        document.querySelectorAll(".js-instagram-link").forEach((link) => {
+            link.setAttribute("href", config.instagramUrl);
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noreferrer");
+        });
+    }
+
+    if (config.facebookUrl) {
+        document.querySelectorAll(".js-facebook-link").forEach((link) => {
+            link.setAttribute("href", config.facebookUrl);
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noreferrer");
+        });
+    }
 }
 
 function initBackToTop() {
