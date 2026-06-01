@@ -328,8 +328,20 @@ function setupContactForm() {
                 form.reset();
             }
         } catch (_error) {
-            statusBox.className = "alert alert-danger";
-            statusBox.textContent = "Unable to reach the contact service right now. Please try again shortly.";
+            statusBox.className = "alert alert-success";
+            statusBox.textContent = "Connecting you directly to our WhatsApp support to complete your inquiry...";
+            
+            const waPhone = "918220488716";
+            const waText = encodeURIComponent(
+                `Hello Eagle Innovations!\n\nI just submitted a contact form inquiry on your website.\n\n*Name*: ${payload.name}\n*Email*: ${payload.email}\n*Message*: ${payload.message}`
+            );
+            const waUrl = `https://wa.me/${waPhone}?text=${waText}`;
+            
+            setTimeout(() => {
+                window.open(waUrl, "_blank");
+                form.reset();
+                statusBox.classList.add("d-none");
+            }, 1800);
         } finally {
             if (submitButton) {
                 submitButton.disabled = false;
